@@ -1,0 +1,305 @@
+main.main-area {
+  /** common style end ================ */
+}
+main.main-area .btn-danger {
+  background-color: var(--danger-color);
+}
+main.main-area .btn-info {
+  background-color: #3d58db;
+}
+main.main-area .btn-warning {
+  background-color: var(--warning-color);
+}
+main.main-area section {
+  padding-bottom: 44px;
+}
+main.main-area section .section-title {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--secondary-color-75);
+  margin-bottom: 10px;
+}
+main.main-area .container {
+  padding-block: 24px;
+}
+main.main-area table {
+  width: 100%;
+  border-collapse: collapse;
+}
+main.main-area table thead > tr > th,
+main.main-area table tbody > tr > td {
+  font-size: 14px;
+  text-align: left;
+  padding: 16px 15px;
+}
+main.main-area table thead > tr > th:last-child,
+main.main-area table tbody > tr > td:last-child {
+  text-align: center;
+}
+main.main-area table thead > tr > th {
+  font-weight: 500;
+  background-color: var(--secondary-color-10);
+}
+main.main-area table thead > tr > th:first-child {
+  border-radius: 5px 0 0;
+}
+main.main-area table thead > tr > th:last-child {
+  border-radius: 0 5px 0 0;
+}
+main.main-area table tbody > tr {
+  border-bottom: 1px solid var(--secondary-color-10);
+}
+main.main-area table tbody > tr > td {
+  font-weight: 400;
+  background-color: var(--bg-color);
+}
+@media only screen and (max-width: 767px) {
+  main.main-area table tbody > tr > td {
+    padding-inline: 15px;
+  }
+}
+main.main-area table tbody > tr:last-child {
+  border-bottom-width: 0;
+}
+main.main-area table tbody > tr:last-child td:first-child {
+  border-radius: 0 0 0 8px;
+}
+main.main-area table tbody > tr:last-child td:last-child {
+  border-radius: 0 0 8px 0;
+}
+main.main-area table .dropdown {
+  margin-inline: auto;
+}
+main.main-area table .dropdown a.btn-dropdown {
+  padding: 5px 20px;
+}
+main.main-area table .dropdown ul.dropdown-menu {
+  right: 15px;
+  left: auto;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1;
+}
+main.main-area table .dropdown ul.dropdown-menu a.btn {
+  background-color: transparent;
+  color: var(--secondary-color);
+  min-height: 42px;
+  border-radius: 0;
+  justify-content: start;
+}
+main.main-area table .dropdown ul.dropdown-menu a.btn:hover {
+  background-color: var(--secondary-color-10);
+}
+main.main-area .section-article {
+  display: grid;
+  gap: 16px;
+}
+@media only screen and (min-width: 992px) {
+  main.main-area .section-article {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main.main-area .section-article {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+main.main-area .section-article .card {
+  padding: 16px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto 1fr;
+  width: 100%;
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  gap: 8px;
+}
+main.main-area .section-article .card .card-icon {
+  --icon-size: 48px;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+main.main-area .section-article .card .card-body .card-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-color-75);
+  text-transform: capitalize;
+}
+main.main-area .section-article .card .card-body .card-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-top: 3px;
+}
+main.main-area .section-article .card .arrow-icon {
+  text-align: end;
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+main.main-area .partial-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+main.main-area .partial-view-header .back-btn-area {
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+main.main-area .partial-view-header .back-btn-area a {
+  color: var(--secondary-color-65);
+}
+main.main-area .partial-view-header .btn {
+  font-size: 14px;
+}
+main.main-area .card.common-card {
+  background-color: var(--bg-color);
+  padding: 24px;
+  margin-top: 16px;
+}
+main.main-area .card.common-card .card-body {
+  display: grid;
+  gap: 24px 16px;
+}
+@media only screen and (min-width: 992px) {
+  main.main-area .card.common-card .card-body {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+main.main-area .dashboard-container .dashboard-donate-group {
+  width: 100%;
+  display: grid;
+  gap: 16px;
+  grid-template-rows: repeat(auto, 368px);
+}
+@media only screen and (min-width: 768px) {
+  main.main-area .dashboard-container .dashboard-donate-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main.main-area .dashboard-container .dashboard-donate-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+main.main-area .dashboard-container .dashboard-donate-group .card {
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  padding: 16px 10px;
+}
+@media only screen and (max-width: 767px) {
+  main.main-area .dashboard-container .dashboard-donate-group .card {
+    min-height: 368px;
+  }
+}
+main.main-area .manage-user-container .user-filter-section ul {
+  display: flex;
+  outline: 1px solid var(--secondary-color-40);
+  border-radius: 5px;
+}
+main.main-area .manage-user-container .user-filter-section ul li {
+  flex: 1 1 100%;
+}
+main.main-area .manage-user-container .user-filter-section ul li a {
+  background-color: var(--secondary-color);
+  border-radius: 0;
+  font-size: 14px;
+  border-right: 1px solid var(--secondary-font-color-10);
+  transition: 0.4s;
+}
+main.main-area .manage-user-container .user-filter-section ul li a.active, main.main-area .manage-user-container .user-filter-section ul li a:hover {
+  background-color: var(--secondary-color-10);
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+main.main-area .manage-user-container .user-filter-section ul li:first-child a {
+  border-radius: 5px 0 0 5px;
+}
+main.main-area .manage-user-container .user-filter-section ul li:last-child a {
+  border-radius: 0 5px 5px 0;
+}
+main.main-area .manage-user-container .all-user-table-area div.dt-container .dt-search input {
+  height: 48px;
+  padding-left: 35px;
+  border-radius: 5px;
+  background-color: var(--secondary-color-5);
+}
+@media only screen and (min-width: 768px) {
+  main.main-area .manage-user-container .all-user-table-area div.dt-container .dt-search input {
+    min-width: 300px;
+  }
+}
+main.main-area .manage-user-container .all-user-table-area #all-user-table {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+main.main-area .manage-user-container .all-user-table-area .all-user-table-label {
+  margin-right: -30px;
+  opacity: 0.5;
+}
+main.main-area .user-details-container .user-preview-section {
+  padding-bottom: 24px;
+}
+main.main-area .user-details-container .user-preview-section .user-controllers {
+  margin-top: 24px;
+}
+main.main-area .user-details-container .user-preview-section .user-controllers .btn {
+  font-size: 14px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+main.main-area .user-details-container .user-preview-section .user-controllers .btn .icon.border-rounded {
+  --icon-size: 14px;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border: 1px solid var(--secondary-font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 10px;
+  margin-bottom: -2px;
+}
+main.main-area .user-details-container .user-info-form .check-files-valid-area {
+  background-color: var(--bg-color);
+  padding: 24px;
+  border-radius: 5px;
+}
+main.main-area .user-details-container .user-info-form .check-files-valid-area .verified-qty {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: end;
+  margin-bottom: 16px;
+}
+main.main-area .user-details-container .user-info-form .check-files-valid-area .check-files-valid-grid {
+  gap: 16px;
+}
+@media only screen and (min-width: 992px) {
+  main.main-area .user-details-container .user-info-form .check-files-valid-area .check-files-valid-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+main.main-area .user-details-container .user-info-form .check-files-valid-area .check-files-valid-grid .card {
+  border: 1px solid var(--secondary-color-10);
+  min-height: 56px;
+  padding-inline: 24px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+main.main-area .user-details-container .user-info-form .check-files-valid-area .check-files-valid-grid .card .document-verification-status {
+  color: var(--secondary-color-40);
+  width: 20px;
+  height: 20px;
+  border: 1px solid;
+  border-radius: 50px;
+  font-size: 12px;
+}
+main.main-area .user-details-container .user-info-form .check-files-valid-area .check-files-valid-grid .card .document-verification-status[verified] {
+  background-color: var(--primary-color);
+  outline: 2px solid;
+  color: var(--secondary-font-color);
+  border-color: var(--primary-color);
+}

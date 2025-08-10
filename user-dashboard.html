@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Krust-Investments | User Dashboard</title>
+    <link rel="icon" href="./assets/img/site-logo.png">
+    <meta name="description" content="Open up a world of possibilities with Krust Investments">
+    <meta name="keywords" content="Investments, krust, trade">
+
+    <!-- nice select 2 -->
+    <link rel="stylesheet" href="./assets/nice-select-2/nice-select2.css">
+
+    <!-- style added here ================ -->
+    <link rel="stylesheet" href="./assets/css/user-dashboard.css">
+
+    <!-- font-awesome added here ================ -->
+    <link rel="stylesheet" href="./assets/font-awesome-6.6.6-web/css/all.min.css">
+
+    <!-- Data table added here ================ -->
+    <link rel="stylesheet" href="../assets/data-table-2.1.4/dataTables.dataTables.css" />
+
+    <!-- jQuery added here ================ -->
+    <script src="./assets/jQuery/jquery-3.7.1.min.js"></script>
+</head>
+
+<body class="">
+    <header>
+        <div class="main-header">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center g-10">
+                <div>
+                    <a href="./index.html" class="logo-area d-flex align-items-center g-4">
+                        <img src="./assets/img/site-logo.png" alt="Site Logo" class="site-logo">
+                        <span class="site-name">Krust-Investments</span>
+                    </a>
+                    <div class="account-status-header d-flex align-items-center g-10">
+                        <span class="dot"></span>
+                        <span class="account-status text-primary">Active Account</span>
+                    </div>
+                </div>
+
+                <a id="btn-nav-toggle" class="btn-nav-toggle">
+                    <img src="./assets/img/icon-menu-category.png">
+                </a>
+                <dl class="header-btns d-flex flex-wrap g-8">
+                    <dt>
+                        <a class="btn btn-deposit g-8" href="#">
+                            <i class="fa-regular fa-credit-card"></i>
+                            <span>Deposit</span>
+                        </a>
+                    </dt>
+                    <dt class="dropdown">
+                        <a class="btn btn-account-balance">
+                            <span class="text">Account Balance</span>
+                            <span class="account-amount">$100,000.00</span>
+                            <span class="icon"><i class="fa-solid fa-angle-down"></i></span>
+                        </a>
+
+                        <dl class="dropdown-menu d-flex flex-column">
+                            <dt class="dropdown-item">Current Plan: <span class="user-plan-name">Tier 1</span> </dt>
+                            <dt class="dropdown-item">
+                                <div class="account-status-header d-flex align-items-center g-10">
+                                    <span class="dot"></span>
+                                    <span class="account-status text-primary">Active Account</span>
+                                </div>
+                                <div class="account-amount-header">
+                                    $100,000.00
+                                </div>
+                            </dt>
+                            <dt class="dropdown-item">
+                                <a href="./login.html">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;
+                                    <span>Logout</span>
+                                </a>
+                            </dt>
+                        </dl>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <nav id="left-nav" class="left-nav">
+            <ul class="nav nav-tabs scroll">
+                <li class="nav-item active">
+                    <a data-toggle="tab" href="#admin-account-grid">
+                        <i class="fa-regular fa-circle-user"></i>
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" href="#payment-method-and-history">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <span>Deposits</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" href="#trading-history">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>Trading History</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" href="#market-watch-grid">
+                        <i class="fa-solid fa-list-ul"></i>
+                        <span>Market Watch</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" href="#">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Education</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" href="#market-news-section">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <span>Market News</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" href="#">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <article class="tab-content trade-article">
+            <section id="admin-account-grid" class="tab-pane in active admin-account-grid d-grid">
+                <div class="balance-board d-grid align-items-center">
+                    <div class="btn-area d-grid g-25">
+                        <a class="btn btn-deposit g-8" href="#">
+                            <i class="fa-regular fa-credit-card"></i>
+                            <span>Deposit</span>
+                        </a>
+                        <a class="btn btn-withdraw g-8" href="#">
+                            <i class="fa-solid fa-landmark"></i>
+                            <span>Withdraw</span>
+                        </a>
+                    </div>
+                    <div class="card-group d-grid w-100 align-items-start">
+                        <div class="card d-grid g-4">
+                            <div class="card-title">Total balance</div>
+                            <div class="card-price d-flex align-items-center g-8">
+                                <img src="./assets/img/flag-eur.png" alt="Eur currency">
+                                <div class="amount">$100,000.00</div>
+                            </div>
+                            <div class="card-status d-flex align-items-center g-3 text-primary">
+                                <div class="percentage">1.5%</div>
+                                <span class="status up">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card d-grid g-4">
+                            <div class="card-title">Total Deposit</div>
+                            <div class="card-price d-flex align-items-center g-8">
+                                <img src="./assets/img/flag-eur.png" alt="Eur currency">
+                                <div class="amount">$40,000.00</div>
+                            </div>
+                        </div>
+                        <div class="card d-grid g-4">
+                            <div class="card-title">Profitable Trades</div>
+                            <div class="card-price d-flex align-items-center g-8">
+                                <img src="./assets/img/flag-eur.png" alt="Eur currency">
+                                <div class="amount">17/20</div>
+                            </div>
+                            <div class="card-status d-flex align-items-center g-4 text-danger-2">
+                                <div class="percentage">0.5%</div>
+                                <span class="status up">
+                                    <i class="fa-solid fa-arrow-down"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="company-trade-percentage-card-group d-grid">
+                    <div class="card d-grid align-items-center">
+                        <img src="./assets/img/company-bitcoin_symbol.svg.png" alt="company logo">
+                        <div class="card-title-area">
+                            <div class="card-title">Bitcoin</div>
+                            <div class="card-price">
+                                <span>USD</span>
+                                <span class="amount">64,000</span>
+                            </div>
+                        </div>
+                        <div class="card-status d-flex align-items-center g-4 text-primary">
+                            <div class="percentage">1.5%</div>
+                            <span class="status">
+                                <i class="fa-solid fa-arrow-up"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card d-grid align-items-center">
+                        <img src="./assets/img/company-apple-T.png" alt="company logo">
+                        <div class="card-title-area">
+                            <div class="card-title">Bitcoin</div>
+                            <div class="card-price">
+                                <span>USD</span>
+                                <span class="amount">64,000</span>
+                            </div>
+                        </div>
+                        <div class="card-status d-flex align-items-center g-4 text-danger">
+                            <div class="percentage">0.5%</div>
+                            <span class="status">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card d-grid align-items-center">
+                        <img src="./assets/img/company-amazon.png" alt="company logo">
+                        <div class="card-title-area">
+                            <div class="card-title">Amazon</div>
+                            <div class="card-price">
+                                <span>USD</span>
+                                <span class="amount">64,000</span>
+                            </div>
+                        </div>
+                        <div class="card-status d-flex align-items-center g-4 text-primary">
+                            <div class="percentage">1.5%</div>
+                            <span class="status">
+                                <i class="fa-solid fa-arrow-up"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card d-grid align-items-center">
+                        <img src="./assets/img/company-solana_symbol.svg.png" alt="company logo">
+                        <div class="card-title-area">
+                            <div class="card-title">Bitcoin</div>
+                            <div class="card-price">
+                                <span>USD</span>
+                                <span class="amount">64,000</span>
+                            </div>
+                        </div>
+                        <div class="card-status d-flex align-items-center g-4 text-danger">
+                            <div class="percentage">0.5%</div>
+                            <span class="status">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav nav-tabs navigation-card-group list-style-none d-grid">
+                    <li class="nav-item">
+                        <a class="card d-grid align-items-center g-8" data-toggle="tab" href="#personal-information">
+                            <div class="icon">
+                                <i class="fa-regular fa-circle-user"></i>
+                            </div>
+                            <p>Personal information</p>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="card d-grid align-items-center g-8" data-toggle="tab" href="#account-verification">
+                            <div class="icon">
+                                <i class="fa-solid fa-fingerprint"></i>
+                            </div>
+                            <p>Verification</p>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="card d-grid align-items-center g-8" data-toggle="tab" href="#security-settings">
+                            <div class="icon">
+                                <i class="fa-solid fa-gear"></i>
+                                <!-- <img src="./assets/img/Icon-gear.png" alt="settings icon"> -->
+                            </div>
+                            <p>Security settings</p>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="card d-grid align-items-center g-8" forward-toggle="tab" href="#market-watch-grid">
+                            <div class="icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <p>Trade</p>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="card d-grid align-items-center g-8" data-toggle="tab" href="#live-chat-section">
+                            <div class="icon">
+                                <i class="fa-brands fa-rocketchat"></i>
+                                <!-- <img src="./assets/img/Icon-chat.png" alt=""> -->
+                            </div>
+                            <p>Live Chat</p>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- <section id="demo" class="tab-pane common-section in demo">
+                <div class="back-btn-area">
+                    <ul class="nav nav-tabs list-style-none">
+                        <li class="nav-item d-flex align-items-center g-15">
+                            <a class="btn-tab d-flex align-items-center g-15" data-toggle="tab"
+                                href="#admin-account-grid">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                <span class="text">Account</span>
+                            </a>
+                            <p class="section-name d-flex g-15">
+                                <span>/</span>
+                                <span>demo text</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="area-title">demo information</div>
+                <div class="card common-card">
+                    <div class="card-body d-grid">
+                        <div class="input-group">
+                            <label class="form-label">First Name</label>
+                            <input class="form-control" type="text" placeholder="Enter First Name">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Last Name</label>
+                            <input class="form-control" type="text" placeholder="Enter Last Name">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Email address</label>
+                            <input class="form-control" type="email" placeholder="Enter email address">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Phone number</label>
+                            <input class="form-control" type="text" placeholder="Enter Phone number">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Country</label>
+                            <select class="form-control" id="11111" searchable="true">
+                                <option value="0">Select Country</option>
+                                <option value="">Bangladesh</option>
+                                <option value="">Nepal</option>
+                                <option value="">Bhutan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-update-demo w-max">Update demo</a>
+                    </div>
+                </div>
+            </section> -->
+            <section id="personal-information" class="tab-pane in personal-information common-section">
+                <div class="back-btn-area">
+                    <ul class="nav nav-tabs list-style-none">
+                        <li class="nav-item d-flex align-items-center g-15">
+                            <a class="btn-tab d-flex align-items-center g-15" data-toggle="tab"
+                                href="#admin-account-grid">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                <span class="text">Account</span>
+                            </a>
+                            <p class="section-name d-flex g-15">
+                                <span>/</span>
+                                <span>Personal Information</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <form action="" method="post">
+                    <div class="personal-info-card-area">
+                        <div class="area-title">personal information</div>
+                        <div class="card common-card">
+                            <div class="card-body d-grid">
+                                <div class="input-group">
+                                    <label class="form-label">First Name</label>
+                                    <input class="form-control" type="text" placeholder="Enter First Name">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input class="form-control" type="text" placeholder="Enter Last Name">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Email address</label>
+                                    <input class="form-control" type="email" placeholder="Enter email address">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Phone number</label>
+                                    <input class="form-control" type="text" placeholder="Enter Phone number">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Country</label>
+                                    <select class="form-control" id="userCountry" searchable="true">
+                                        <option value="0">Select Country</option>
+                                        <option value="">Bangladesh</option>
+                                        <option value="">Nepal</option>
+                                        <option value="">Bhutan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="btn btn-update-profile w-max">Update Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-picture-card-area">
+                        <div class="area-title">Profile picture</div>
+                        <div class="card common-card">
+                            <div class="card-body d-grid">
+                                <div class="upload-files-container w-100 overflowY-hidden">
+                                    <div class="drag-file-area align-content-center">
+                                        <img id="user-image" class="user-image d-none"
+                                            src="https://picsum.photos/300/200?grayscale" alt="">
+                                        <label for="upload-dp-input"
+                                            class="upload-icon attach-icon mx-auto d-flex justify-content-center align-items-center">
+                                            <i class="fa-solid fa-link"></i>
+                                            <!-- <img src="./assets/img/Icon-attach.png"> -->
+                                        </label>
+                                        <p class="attach-note dynamic-message">
+                                            Drop a file here to upload <br> Photo must be 5MB or less
+                                        </p>
+                                        <label class="label d-none">
+                                            <span class="browse-files">
+                                                <input id="upload-dp-input" type="file" accept="image/*"
+                                                    class="default-file-input" />
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <p class="cannot-upload-message">
+                                        <strong>Error : </strong> <span> Please select a file
+                                            first</span>
+                                        <span class="cancel-alert-button btn-close">❌</span>
+                                    </p>
+
+                                    <div class="file-block">
+                                        <div class="file-info">
+                                            <span class="file-name"
+                                                style="max-width: 230px; padding-right: 5px; overflow: hidden;"> </span>
+                                            | <span class="file-size"> </span>
+                                        </div>
+                                        <span class="material-icons remove-file-icon">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                        </span>
+                                        <div class="progress-bar"> </div>
+                                    </div>
+                                </div>
+                                <fieldset>
+                                    <p>Prohibited Pictures:</p>
+                                    <ul>
+                                        <li>Photos explicit or inappropriate nature</li>
+                                        <li>Photos involving people younger than 18 years old</li>
+                                        <li>Third-party copyrighted protected photos</li>
+                                        <li>AI generated photos</li>
+                                        <li class="text-danger">Images not in JPG, PNG or GIF</li>
+                                        <li>Photos larger than 5MB</li>
+                                    </ul>
+                                    <p>Your face must be shown clearly. All photos uploaded must abide by these
+                                        guideline or the photo will be removed.</p>
+                                </fieldset>
+                                <a type="button" id="dp-upload-btn" class="btn upload-button w-max">Upload picture</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section id="account-verification" class="tab-pane in account-verification common-section">
+                <div class="back-btn-area">
+                    <ul class="nav nav-tabs list-style-none">
+                        <li class="nav-item d-flex align-items-center g-15">
+                            <a class="btn-tab d-flex align-items-center g-15" data-toggle="tab"
+                                href="#admin-account-grid">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                <span class="text">Account</span>
+                            </a>
+                            <p class="section-name d-flex g-15">
+                                <span>/</span>
+                                <span>Verification</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="area-title d-flex justify-content-between">
+                    <h3>Identification</h3>
+                    <p class="verification-status d-flex align-items-center g-5">
+                        <!-- use $('.verification-status').attr "verified" for verify -->
+                        <span class="icon d-flex justify-content-center align-items-center"><i
+                                class="fa-solid fa-check"></i></span>
+                        <span class="status-text">Unverified</span>
+                    </p>
+                </div>
+                <div class="card common-card">
+                    <div class="card-header">
+                        <div class="card-title">Profile Status: Unverified</div>
+                    </div>
+                    <div class="card-body d-grid">
+                        <div class="input-group attach-file-input-group">
+                            <label class="form-label">Upload ID Front</label>
+                            <div class="form-control">
+                                <label for="identification-front-id"
+                                    class="attach-icon d-flex justify-content-between align-items-center w-100">
+                                    <span type="placeholder">Upload ID card Front</span>
+                                    <input id="identification-front-id" class="d-none" type="file">
+                                    <i class="fa-solid fa-link"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-group attach-file-input-group">
+                            <label class="form-label">Upload ID back</label>
+                            <div class="form-control">
+                                <label for="identification-back-id"
+                                    class="attach-icon d-flex justify-content-between align-items-center w-100">
+                                    <span type="placeholder">Upload ID card back</span>
+                                    <input id="identification-back-id" class="d-none" type="file"
+                                        placeholder="Upload ID card back">
+                                    <i class="fa-solid fa-link"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-group attach-file-input-group">
+                            <label class="form-label">Upload Proof Of Address</label>
+                            <div class="form-control">
+                                <label for="user-proof-of-address"
+                                    class="attach-icon d-flex justify-content-between align-items-center w-100">
+                                    <span type="placeholder">Upload Proof Of Address</span>
+                                    <input id="user-proof-of-address" class="d-none" type="file">
+                                    <i class="fa-solid fa-link"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-group attach-file-input-group">
+                            <label class="form-label">Upload Selfie</label>
+                            <div class="form-control">
+                                <label for="attach-user-selfie"
+                                    class="attach-icon d-flex justify-content-between align-items-center w-100">
+                                    <span type="placeholder">Upload Selfie</span>
+                                    <input id="attach-user-selfie" class="d-none" type="file" accept="image/*"
+                                        capture="environment">
+                                    <i class="fa-solid fa-camera"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-submit-identification w-max">Submit identification</a>
+                    </div>
+                </div>
+                <div class="card common-card">
+                    <div class="card-header">
+                        <div class="card-title">Documents Uploaded and Confirmed</div>
+                    </div>
+                    <div class="card-footer check-files-valid-grid d-grid">
+                        <div class="card d-flex justify-content-between align-items-center">
+                            <p>ID Front</p>
+                            <p class="document-verification-status d-flex justify-content-center align-items-center g-5"
+                                data-label="identification-front-id">
+                                <!-- use $('.verification-status').attr "verified" for verify -->
+                                <span class="icon d-flex justify-content-center align-items-center"><i
+                                        class="fa-solid fa-check"></i></span>
+                            </p>
+                        </div>
+                        <div class="card d-flex justify-content-between align-items-center">
+                            <p>ID Back</p>
+                            <p class="document-verification-status d-flex justify-content-center align-items-center g-5"
+                                data-label="identification-back-id">
+                                <!-- use $('.verification-status').attr "verified" for verify -->
+                                <span class="icon d-flex justify-content-center align-items-center"><i
+                                        class="fa-solid fa-check"></i></span>
+                            </p>
+                        </div>
+                        <div class="card d-flex justify-content-between align-items-center">
+                            <p>proof of address</p>
+                            <p class="document-verification-status d-flex justify-content-center align-items-center g-5"
+                                data-label="user-proof-of-address">
+                                <!-- use $('.verification-status').attr "verified" for verify -->
+                                <span class="icon d-flex justify-content-center align-items-center"><i
+                                        class="fa-solid fa-check"></i></span>
+                            </p>
+                        </div>
+                        <div class="card d-flex justify-content-between align-items-center">
+                            <p>upload selfie</p>
+                            <p class="document-verification-status d-flex justify-content-center align-items-center g-5"
+                                data-label="attach-user-selfie">
+                                <!-- use $('.verification-status').attr "verified" for verify -->
+                                <span class="icon d-flex justify-content-center align-items-center"><i
+                                        class="fa-solid fa-check"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="security-settings" class="tab-pane common-section in security-settings">
+                <div class="back-btn-area">
+                    <ul class="nav nav-tabs list-style-none">
+                        <li class="nav-item d-flex align-items-center g-15">
+                            <a class="btn-tab d-flex align-items-center g-15" data-toggle="tab"
+                                href="#admin-account-grid">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                <span class="text">Account</span>
+                            </a>
+                            <p class="section-name d-flex g-15">
+                                <span>/</span>
+                                <span>Settings</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="area-title">Change Password</div>
+                <div class="card common-card">
+                    <div class="card-body d-grid">
+                        <div class="input-group">
+                            <label class="form-label">new Password</label>
+                            <input class="form-control form-eye" type="password" name="password" id="set-new-password"
+                                placeholder="Enter password">
+                            <label for="set-new-password" class="eye-icon">
+                                <i class="fa-regular fa-eye-slash"></i>
+                            </label>
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Update Password</label>
+                            <input class="form-control form-eye" type="password" name="password"
+                                id="set-new-password-retype" placeholder="Enter password">
+                            <label for="set-new-password-retype" class="eye-icon">
+                                <i class="fa-regular fa-eye-slash"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-update-password w-max">Update password</a>
+                    </div>
+                </div>
+                <div class="area-title">Language and Currency</div>
+                <div class="card common-card">
+                    <div class="card-body d-grid">
+                        <div class="input-group">
+                            <label class="form-label">Country</label>
+                            <select class="form-control" id="dashboard-currency" searchable="true">
+                                <!-- <option value="0">Select Country</option> -->
+                                <option value="">Dollar (USD)</option>
+                                <option value="">Taka (BDT)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Profile Language</label>
+                            <select class="form-control" id="profile-language" searchable="true">
+                                <!-- <option value="0">Select Country</option> -->
+                                <option value="">Arabic</option>
+                                <option value="">English</option>
+                                <option value="">Bangla</option>
+                                <option value="">Hindi</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-update-lang-currancy w-max">Save changes</a>
+                    </div>
+                </div>
+                <div class="area-title">Activate Two Factor (2FA) Authentication</div>
+                <div class="card common-card card-2fa">
+                    <div class="card-body d-grid">
+                        <div class="input-group-area d-flex flex-column justify-content-between">
+                            <div class="input-group">
+                                <label class="form-label">Activation code for Google Authentication</label>
+                                <input class="form-control form-clone" type="text" id="activation-code-for-auth"
+                                    placeholder="Activation code">
+                                <label for="activation-code-for-auth" class="form-icon clone-icon">
+                                    <i class="fa-regular fa-clone"></i>
+                                </label>
+                            </div>
+                            <div class="input-group">
+                                <label class="form-label">Activate Authenticator and enter generated code in field
+                                    below</label>
+                                <input class="form-control" type="text" id="generated-qr-code"
+                                    placeholder="enter code here">
+                            </div>
+                        </div>
+                        <div class="qr-code-area">
+                            <div class="input-group">
+                                <label class="form-label">QR Code</label>
+                                <img class="img-qr-code" src="./assets/img/dev-qr-code.png" alt="qr-code">
+                            </div>
+                        </div>
+                        <a href="" class="btn btn-activation-2fa w-max">Activate 2FA Protection</a>
+                    </div>
+                </div>
+            </section>
+            <section id="live-chat-section" class="tab-pane common-section in live-chat-section">
+                <div class="back-btn-area">
+                    <ul class="nav nav-tabs list-style-none">
+                        <li class="nav-item d-flex align-items-center g-15">
+                            <a class="btn-tab d-flex align-items-center g-15" data-toggle="tab"
+                                href="#admin-account-grid">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                <span class="text">Account</span>
+                            </a>
+                            <p class="section-name d-flex g-15">
+                                <span>/</span>
+                                <span>Live chat</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card d-grid scroll">
+                    <div id="chat-body" class="card-body chat-body d-flex flex-column align-items-start w-100 g-20">
+                        <div class="admin-text-box d-flex align-items-start g-8">
+                            <div class="icon-area d-flex justify-content-center align-items-center">
+                                <img class="admin-icon" src="./assets/img/site-logo.png" alt="admin name">
+                            </div>
+                            <p class="message">Hello! How can i help you today?</p>
+                        </div>
+                        <div class="user-text-box d-flex align-items-start g-8">
+                            <p class="message">I want to make an enquiry about the account plans.</p>
+                            <div class="icon-area d-flex justify-content-center align-items-center">
+                                <img class="user-icon" src="./assets/img/site-logo.png" alt="user name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="input-group live-chat-input-group">
+                            <input class="form-control" type="text" id="live-chat-input"
+                                placeholder="Type your message here" autocomplete="off" autofocus>
+                            <a id="send-message" class="form-icon">
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="payment-method-and-history" class="tab-pane common-section in payment-method-and-history">
+                <ul class="nav navigation-card-group list-style-none d-flex w-100 scroll">
+                    <li class="nav-item d-flex">
+                        <a class="card active" data-target="#user-deposit-area">
+                            <p>Deposit</p>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <a class="card" data-target="#user-withdraw-area">
+                            <p>Withdraw</p>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <a class="card" forward-toggle="tab" href="#market-watch-grid">
+                            <p>Trade</p>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <a class="card" data-target="#trading-history">
+                            <p>Trading History</p>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <a class="card" href="">
+                            <p>Tradings Bots</p>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <a class="card" forward-toggle="tab" href="#admin-account-grid">
+                            <p>Account</p>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <a class="card" forward-toggle="tab" href="#market-watch-grid">
+                            <p>Market Watch</p>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <a class="card" forward-toggle="tab" href="">
+                            <p>Education</p>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <a class="card" data-target="#user-upgrade-account">
+                            <p>Upgrade</p>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <a class="card" forward-toggle="tab" href="#admin-account-grid">
+                            <p>Payment Settings</p>
+                        </a>
+                    </li>
+                </ul>
+
+                <div id="user-deposit-area" class="user-deposit-area collapse">
+                    <div class="area-title">Choose Payment Method</div>
+                    <div class="collapsible-card-group">
+                        <div class="card">
+                            <div class="card-header">
+                                <a data-toggle="collapse" href="#payment-bitcoin-tab"
+                                    class="d-flex align-items-center g-8 active">
+                                    <img src="./assets/img/company-bitcoin_symbol.svg.png" alt="Bitcoin">
+                                    <span>Bitcoin</span>
+                                </a>
+                            </div>
+                            <div id="payment-bitcoin-tab" class="payment-bitcoin-tab card-body collapse active">
+                                <p class="card-title">Make payment to the Bitcoin address below and upload receipt.
+                                </p>
+                                <div class="payment-details-area d-grid align-items-center">
+                                    <div class="input-group-area d-flex flex-column justify-content-between">
+                                        <div class="input-group">
+                                            <label class="form-label">amount</label>
+                                            <input class="form-control" type="text" id="generated-qr-code-from-doc"
+                                                placeholder="enter amount to pay">
+                                        </div>
+                                        <div class="input-group">
+                                            <label class="form-label">wallet address</label>
+                                            <input class="form-control form-clone" type="text" id="wallet-address"
+                                                placeholder="Wallet address">
+                                            <label for="wallet-address" class="form-icon clone-icon">
+                                                <i class="fa-regular fa-clone"></i>
+                                            </label>
+                                        </div>
+                                        <div class="input-group attach-file-input-group">
+                                            <label class="form-label">Upload receipt</label>
+                                            <div class="form-control">
+                                                <label for="upload-payment-receipt"
+                                                    class="attach-icon d-flex justify-content-between align-items-center w-100">
+                                                    <span type="placeholder">Upload payment receipt</span>
+                                                    <input id="upload-payment-receipt" class="d-none" type="file">
+                                                    <i class="fa-solid fa-link"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="qr-code-area">
+                                        <div class="input-group">
+                                            <label class="form-label">QR Code</label>
+                                            <img class="img-qr-code" src="./assets/img/dev-qr-code.png" alt="qr-code">
+                                        </div>
+                                    </div>
+                                    <a data-toggle="modal" href="#depositConfirmationModal"
+                                        class="btn w-max">Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a data-toggle="collapse" href="#payment-usdt-tab"
+                                    class="payment-tab d-flex align-items-center g-8">
+                                    <img src="./assets/img/payment-usdt logo 1.png" alt="usdt">
+                                    <span>usdt</span>
+                                </a>
+                            </div>
+                            <div id="payment-usdt-tab" class="payment-usdt-tab card-body collapse d-none">
+                                <p class="card-title text-danger">Make payment to the USDT address below and upload
+                                    receipt.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a data-toggle="collapse" href="#payment-xmr-tab"
+                                    class="payment-tab d-flex align-items-center g-8">
+                                    <img src="./assets/img/payment-xmrig_logo.svg.png" alt="xmr">
+                                    <span>xmr</span>
+                                </a>
+                            </div>
+                            <div id="payment-xmr-tab" class="payment-xmr-tab card-body collapse d-none">
+                                <p class="card-title text-danger">Make payment to the XMR address below and upload
+                                    receipt.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a data-toggle="collapse" href="#payment-paypal-tab"
+                                    class="payment-tab d-flex align-items-center g-8">
+                                    <img src="./assets/img/payment-paypal_symbol.svg.png" alt="deposit via paypal">
+                                    <span>deposit via paypal</span>
+                                </a>
+                            </div>
+                            <div id="payment-paypal-tab" class="payment-paypal-tab card-body collapse d-none">
+                                <p class="card-title text-danger">Make payment to the Paypal address below and upload
+                                    receipt.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a data-toggle="collapse" href="#payment-bank-tab"
+                                    class="payment-tab d-flex align-items-center g-8">
+                                    <img src="./assets/img/payment-Icon.png" alt="deposit via bank">
+                                    <span>deposit via bank</span>
+                                </a>
+                            </div>
+                            <div id="payment-bank-tab" class="payment-bank-tab card-body collapse d-none">
+                                <p class="card-title text-danger">Make payment to the Bank address below and upload
+                                    receipt.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="depositConfirmationModal" class="modal depositConfirmationModal">
+                        <div class="modal-dialog d-flex flex-column justify-content-center align-items-center">
+                            <div class="modal-body text-center">
+                                <h3 class="modal-title">Requesting Payment Info</h3>
+                                <p class="modal-text">You are requesting Bank Wire Transfer Payment Information in order
+                                    to
+                                    fund your wallet</p>
+                                <div class="btn-area d-flex g-15 justify-content-center">
+                                    <a class="btn btn-modal-close btn-confirm-info">Yes</a>
+                                    <a class="btn btn-modal-close text-bg-default">No</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="area-title">Deposit History</div>
+                    <div class="deposit-table-area table-area scroll">
+                        <table class="deposit-table w-100">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Date</th>
+                                    <th>Address</th>
+                                    <th>Currency</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>1w90whdi32duegfueuoodwbdowggd81dw9n19</td>
+                                    <td>USDT</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>1w90whdi32duegfueuoodwbdowggd81dw9n19</td>
+                                    <td>USDT</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="false">Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>1w90whdi32duegfueuoodwbdowggd81dw9n19</td>
+                                    <td>USDT</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>1w90whdi32duegfueuoodwbdowggd81dw9n19</td>
+                                    <td>USDT</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="false">Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>1w90whdi32duegfueuoodwbdowggd81dw9n19</td>
+                                    <td>USDT</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>1w90whdi32duegfueuoodwbdowggd81dw9n19</td>
+                                    <td>USDT</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>1w90whdi32duegfueuoodwbdowggd81dw9n19</td>
+                                    <td>USDT</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>1w90whdi32duegfueuoodwbdowggd81dw9n19</td>
+                                    <td>USDT</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>1w90whdi32duegfueuoodwbdowggd81dw9n19</td>
+                                    <td>USDT</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>1w90whdi32duegfueuoodwbdowggd81dw9n19</td>
+                                    <td>USDT</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="user-withdraw-area" class="user-withdraw-area collapse d-none">
+                    <div class="personal-info-card-area">
+                        <div class="area-title">Withdrawal</div>
+                        <div class="card common-card">
+                            <div class="card-body d-grid">
+                                <div class="input-group">
+                                    <label class="form-label">Amount</label>
+                                    <input class="form-control" type="number" min="0" placeholder="Enter Amount">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Withdrawal Method</label>
+                                    <select class="form-control small" id="userWithdrawalMethod" searchable="false">
+                                        <option value="0">Select Method</option>
+                                        <option value="">Paypal</option>
+                                        <option value="">bKash</option>
+                                        <option value="">Nagad</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Wallet Address</label>
+                                    <input class="form-control" type="email" placeholder="Enter Withdrawal address">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a data-toggle="modal" href="#withDrawRequestModal"
+                                    class="btn btn-request-withdrawal w-max">Request Withdrawal</a>
+                                <p class="support-text">For other payment methods please <a href="">Contact Support</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="withDrawRequestModal" class="modal withDrawRequestModal">
+                        <div class="modal-dialog d-flex flex-column justify-content-center align-items-center">
+                            <div class="modal-body text-center">
+                                <h3 class="modal-title">Withdrawal Request</h3>
+                                <p class="modal-text">Payment should be received within 20 to 45 minutes. Please check
+                                    your email.</p>
+                                <div class="btn-area d-flex g-15 justify-content-center">
+                                    <a class="btn btn-modal-close bg-primary">Finish</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="area-title">Transaction History</div>
+                    <div class="withdraw-table-area table-area scroll">
+                        <table class="withdraw-table w-100">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Date</th>
+                                    <th>Method</th>
+                                    <th>Amount</th>
+                                    <th style="width: 140px;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>Bitcoin</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>XMR</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="false">Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>Bitcoin</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>Bank Wire Transfer</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="false">Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>Bitcoin</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>Bitcoin</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>Bitcoin</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>Bitcoin</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>Bitcoin</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>#12DAWR12Q</td>
+                                    <td>19-08-2024</td>
+                                    <td>Bitcoin</td>
+                                    <td>$20,000</td>
+                                    <td isConfirmed="true">Confirmed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="trading-history" class="trading-history collapse  d-none">
+                    <div class="area-title">trading history</div>
+                    <div class="trading-history-table-area table-area scroll w-100">
+                        <table id="trading-history-table" class="trading-history-table w-100">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Created</th>
+                                    <th>Asset</th>
+                                    <th>Manual/Auto</th>
+                                    <th>Live Demo</th>
+                                    <th>Trade</th>
+                                    <th>Market</th>
+                                    <th>PNL</th>
+                                    <th>Fain/loss</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>17QHA6QH</td>
+                                    <td>07-08-24</td>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="./assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>Manual Trade</td>
+                                    <td>Live</td>
+                                    <td>$1,000</td>
+                                    <td>Currency</td>
+                                    <td>+4005</td>
+                                    <td class="text-success">Gain</td>
+                                </tr>
+                                <tr>
+                                    <td>17QHA6QH</td>
+                                    <td>07-08-24</td>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="./assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>Manual Trade</td>
+                                    <td>Live</td>
+                                    <td>$1,000</td>
+                                    <td>Currency</td>
+                                    <td>+4005</td>
+                                    <td class="text-danger">Loss</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="user-upgrade-account" class="user-upgrade-account collapse d-none">
+                    <div class="account-plan">
+                        <style>
+                            .account-plan {
+                                margin-block: 40px 100px;
+
+                                .card-group {
+                                    margin-top: 42px;
+                                }
+                            }
+                        </style>
+                        <div class="container">
+                            <h1 class="title text-center"><span class="text-primary">Account</span> Plans</h1>
+
+                            <div class="card-group d-flex flex-wrap justify-content-evenly w-100">
+                                <div class="card d-flex flex-column my-plan">
+                                    <div class="card-badge w-max">Standard</div>
+                                    <div class="card-title">$500</div>
+                                    <dl class="item-list d-grid g-10">
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Up to 25% margin loan</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Daily news</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Trading Academy</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Weekly market review</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Account manager</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Weekly portfolio progress report</span>
+                                        </dt>
+                                    </dl>
+                                    <a href="" class="btn w-max">Your Current Account</a>
+                                </div>
+                                <div class="card d-flex flex-column">
+                                    <div class="card-badge w-max">Silver</div>
+                                    <div class="card-title">$1000</div>
+                                    <dl class="item-list d-grid g-10">
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Up to 35% margin loan</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Daily market review</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Daily portfolio progress report</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Work with a portfolio manager</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Monthly session with certified accountant</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>24/7 account monitoring by top analyst group</span>
+                                        </dt>
+                                    </dl>
+                                    <a href="" class="btn w-max">Open account</a>
+                                </div>
+                                <div class="card d-flex flex-column">
+                                    <div class="card-badge w-max">Gold</div>
+                                    <div class="card-title">$5000</div>
+                                    <dl class="item-list d-grid g-10">
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Up to 50% margin loan</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Daily market review</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Weekly live stream trading webinar</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Weekly 1 on 1 with market Analyst</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Everything in Standard &amp; Silver</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>End of year summary with certified Tax specialist</span>
+                                        </dt>
+                                    </dl>
+                                    <a href="" class="btn w-max">Open account</a>
+                                </div>
+                                <div class="card d-flex flex-column">
+                                    <div class="card-badge w-max">VIP</div>
+                                    <div class="card-title">$100,000</div>
+                                    <dl class="item-list d-grid g-10">
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Up to 75% margin loan</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Daily market review</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Daily portfolio progress report</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Personal portfolio manager</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Weekly live stream trading webinar</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Customized Education</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Daily market signals</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>In-Depth Research</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Invites to VIP events</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Managed Portfolio</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>VIP Advisor</span>
+                                        </dt>
+                                    </dl>
+                                    <a href="" class="btn w-max">Open account</a>
+                                </div>
+                                <div class="card d-flex flex-column">
+                                    <div class="card-badge w-max">Pro</div>
+                                    <div class="card-title">$500,000</div>
+                                    <dl class="item-list d-grid g-10">
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Up to 100% margin loan</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Daily market review &amp; signals</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Unlimited access to brokers</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Personal chief portfolio manager</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Customized Education</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Daily one on one live stream trading webinar with top analyst</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Wealth Manager</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Invites to VIP events</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Managed Portfolio</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Higher Payouts</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Super tight spreads</span>
+                                        </dt>
+                                    </dl>
+                                    <a href="" class="btn w-max">Open account</a>
+                                </div>
+                                <div class="card d-flex flex-column">
+                                    <div class="card-badge w-max">Pro VIP</div>
+                                    <div class="card-title">$1,000,000</div>
+                                    <dl class="item-list d-grid g-10">
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Up to 100% margin loan</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Daily market review &amp; signals</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Unlimited access to brokers</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Personal chief portfolio manager</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Customized Education</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Daily one on one live stream trading webinar with top analyst</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Wealth Manager</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Invites to VIP events</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Managed Portfolio</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Higher Payouts</span>
+                                        </dt>
+                                        <dt>
+                                            <img src="./assets/img/right-tick-vector.png" class="card-img">
+                                            <span>Super tight spreads</span>
+                                        </dt>
+                                    </dl>
+                                    <a href="" class="btn w-max">Open account</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="market-watch-grid" class="tab-pane in market-watch-grid d-grid">
+                <div class="card trade-status-card">
+                    <div class="card-header">
+                        <a href="" class="btn-tab active">Market Watch</a>
+                        <a href="" class="btn-tab">Tradable Assets</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-indicators scroll">
+                            <a href="" class="btn-pill active">Forex</a>
+                            <a href="" class="btn-pill">Crypto</a>
+                            <a href="" class="btn-pill">Indices</a>
+                            <a href="" class="btn-pill">Test</a>
+                        </div>
+                        <div class="trade-update-table-area">
+                            <div class="input-group search-input-group">
+                                <input id="searchTradeAssets" class="form-control search-input" type="search"
+                                    placeholder="Search for assets etc...">
+                                <label for="searchTradeAssets" class="search-icon"><i
+                                        class="fa-solid fa-magnifying-glass"></i></label>
+                            </div>
+                            <dl class="trade-update-table scroll">
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-danger">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-danger">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-danger">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                                <dt class="d-flex justify-content-between align-items-center g-10">
+                                    <div class="country-name d-flex align-items-center g-8">
+                                        <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                        <span>eurusd</span>
+                                    </div>
+                                    <div class="price">1.0953</div>
+                                    <div class="percentage text-success">+0.77%</div>
+                                </dt>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="market-watch-chart-area d-grid scroll">
+                    <div class="market-watch-chart-parent">
+                        <div id="market-watch-chart" class="market-watch-chart">
+                        </div>
+                    </div>
+                    <div class="market-watch-chart-filter scroll">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div class="d-flex g-8">
+                                    <img src="./assets/img/country-eur.png" alt="country flag" class="flag">
+                                    <div class="d-grid">
+                                        <span class="name">eurusd</span>
+                                        <span class="details">Euro / U.S Dollar</span>
+                                    </div>
+                                </div>
+
+                                <div class="icon">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                            </div>
+                            <div class="card-body d-grid g-10">
+                                <div class="input-group">
+                                    <label class="form-label">Amount</label>
+                                    <input class="form-control" type="number" min="0" placeholder="Enter Amount">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Time Frame</label>
+                                    <select class="form-control small" id="marketViewChartTimeFrame">
+                                        <option value="0">Select Time Frame</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Margin</label>
+                                    <select class="form-control small" id="marketViewChartFrame">
+                                        <option value="0">Select Margin</option>
+                                        <option value="">5x</option>
+                                        <option value="">10x</option>
+                                        <option value="">15x</option>
+                                    </select>
+                                </div>
+                                <table class="market-watch-short-history w-100">
+                                    <tbody>
+                                        <tr>
+                                            <td>Strike Rate</td>
+                                            <td>-</td>
+                                            <td class="text-end">70%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contract Size</td>
+                                            <td>-</td>
+                                            <td class="text-end">1M</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Leverage</td>
+                                            <td>-</td>
+                                            <td class="text-end">1:50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fees</td>
+                                            <td>-</td>
+                                            <td class="text-end">$0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn-area d-flex g-10">
+                                    <a href="" class="btn d-grid btn-buy">
+                                        <span class="name">buy</span>
+                                        <span>1.5647</span>
+                                    </a>
+                                    <a href="" class="btn d-grid btn-sell">
+                                        <span class="name">Sell</span>
+                                        <span>1.5402</span>
+                                    </a>
+                                </div>
+
+                                <div class="payout-area d-grid">
+                                    <span>Your Payout</span>
+                                    <span class="text-center">=</span>
+                                    <span class="text-end">$320.45</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="market-details-summery-card-group d-flex justify-content-between">
+                        <div class="last-closed-trades">
+                            <p>Last Closed Trades</p>
+                            <div class="d-flex">
+                                <div class="card d-flex flex-column justify-content-center">
+                                    <div class="key">ASSETS</div>
+                                    <div class="value">EUR/USD</div>
+                                </div>
+                                <div class="card d-flex flex-column justify-content-center">
+                                    <div class="key">TIMEFRAME</div>
+                                    <div class="value">10 Hrs</div>
+                                </div>
+                                <div class="card d-flex flex-column justify-content-center">
+                                    <div class="key">Capital</div>
+                                    <div class="value">$100k</div>
+                                </div>
+                                <div class="card d-flex flex-column justify-content-center">
+                                    <div class="key">Profit</div>
+                                    <div class="value">+ $1,000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last-open-trades">
+                            <p class="text-end">Last Open Trades</p>
+                            <div class="d-flex">
+                                <div class="card d-flex flex-column justify-content-center">
+                                    <div class="key">ASSETS</div>
+                                    <div class="value">EUR/USD</div>
+                                </div>
+                                <div class="card d-flex flex-column justify-content-center">
+                                    <div class="key">TIMEFRAME</div>
+                                    <div class="value">10 Hrs</div>
+                                </div>
+                                <div class="card d-flex flex-column justify-content-center">
+                                    <div class="key">CURRENT TIME</div>
+                                    <div id="currentTime" interval="true" class="value">1:42 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="market-news-section" class="tab-pane in market-news-section d-grid">
+                <div class="card news-search-card">
+                    <div class="card-header">
+                        <div class="card-indicators scroll">
+                            <a href="" class="btn-pill active">Forex</a>
+                            <a href="" class="btn-pill">Crypto</a>
+                            <a href="" class="btn-pill">Indices</a>
+                            <a href="" class="btn-pill">Test</a>
+                        </div>
+                        <div class="input-group search-input-group">
+                            <input id="marketNewsSearch" class="form-control search-input" type="search"
+                                placeholder="Search for assets etc..." searchFromObj="['#news-title-area .news-title']">
+                            <label for="marketNewsSearch" class="search-icon"><i
+                                    class="fa-solid fa-magnifying-glass"></i></label>
+                        </div>
+                    </div>
+                    <div id="news-title-area" class="card-body scroll">
+                        <ul class="list-style-none">
+                            <li><a href="">
+                                    <span class="news-title">China Consumer Inflation Rises, Factory-Gate
+                                        Prices...</span>
+                                    <span class="news-time">1d ago</span>
+                                </a></li>
+                            <li><a href="">
+                                    <span class="news-title">DIS: Disney Stock Sheds 4.5% Despite...</span>
+                                    <span class="news-time">15d ago</span>
+                                </a></li>
+                            <li><a class="active" href="">
+                                    <span class="news-title">BTC/USD: Bitcoin Rockets 15% as Good Jobs Data...</span>
+                                    <span class="news-time">15d ago</span>
+                                </a></li>
+                            <li><a href="">
+                                    <span class="news-title">SPX: S&P 500 Logs 2.3% for Best Day Since 2022...</span>
+                                    <span class="news-time">15d ago</span>
+                                </a></li>
+                            <li><a href="">
+                                    <span class="news-title">UAA: Under Armour Stock Sprints 19% on...</span>
+                                    <span class="news-time">19d ago</span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="news-page scroll">
+                    <div id="trading-news-container" class="trading-news-container">
+                        <div class="news-title-img">
+                            <img src="./assets/img/market-news-bitcoins.png">
+                        </div>
+                        <div class="news-label-area">
+                            <span class="label">Crypto</span>
+                            <span class="label">Bitcoin</span>
+                            <span class="label">Indices</span>
+                        </div>
+                        <h1 class="news-title">BTC/USD: Bitcoin Rockets 15% as Good Jobs Data Ignites Post-Selloff
+                            Bargain Hunt</h1>
+                        <p class="news-post-time">Aug 9, 2024 | 08:57 GMT+1</p>
+                        <div class="news-body">
+                            <p class="article">
+                                Crypto enthusiasts snapped up tokens on discount left and right after jobless claims
+                                offered glimmer of hope that the
+                                economy may not be that bad.
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>Bitcoin prices <a href="">BTCUSD</a> shot sharply higher Thursday and remained
+                                        well-bid Friday morning after a single report sparked a
+                                        broad rally in crypto. Following the <a href="">digital asset carnage</a> from
+                                        earlier this week, risk takers rushed to snap up
+                                        discounted tokens, sending Bitcoin higher by as much as 15%. The OG token
+                                        rallied from a Thursday low of $55,000 a piece
+                                        to nearly $63,000. What&#x2019s more, Bitcoin jumped 26% from its weekly low to
+                                        its
+                                        weekly high.</p>
+                                </li>
+                                <li>
+                                    <p>Jobless claims, a proxy for layoffs, showed that 233,000 people filed for
+                                        unemployment benefits in the week ended August
+                                        3. The figure slipped below expectations for 240,000 and offered a glimmer of
+                                        hope that the economy might not be
+                                        crumbling (as suggested by the <a href="">July jobs report</a> .) To this end,
+                                        risk assets were back on the menu. Cryptocurrencies
+                                        enjoyed lots of buying appetite as pent-up demand got unleashed.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>Ethereum, the second-largest digital coin, also added 15% on Thursday with prices
+                                        floating near $2,800 a piece, from
+                                        $2,350. Following the <a href="">painful Monday rout</a>, a strong recovery has
+                                        buoyed Ether to flaunt gains of about 30% on the week.
+                                        The token is seeing increased investor interest now that a total of <a
+                                            href="">nine spot Ether exchange-traded funds</a> (ETFs) are
+                                        trading side by side with traditional assets.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+
+
+
+    <!-- font-awesome added here ================ -->
+    <script src="./assets/font-awesome-6.6.6-web/js/all.min.js"></script>
+    <!-- nice select 2 -->
+    <script src="./assets/nice-select-2/nice-select2.js"></script>
+
+    <!-- trading view js added here ======================= -->
+    <!-- <script type="text/javascript" src="./assets/trading-view-js/trading-view.js"></script> -->
+
+    <!-- apex charts js added here ======================= -->
+    <script type="text/javascript" src="./assets/apexcharts/apexcharts.js"></script>
+
+    <!-- upload file js add ======================= -->
+    <script src="./assets/upload-file/upload-file.js"></script>
+
+    <!-- Data table added here ================ -->
+    <script src="../assets/data-table-2.1.4/dataTables.js"></script>
+
+
+    <!-- script added here ======================= -->
+    <script src="./assets/js/user-dashboard.js"></script>
+
+    <!-- font added here (ital + Merriweather) ================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+</body>
+
+</html>

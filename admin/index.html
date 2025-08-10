@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Krust-Investments | Admin</title>
+    <link rel="icon" href="../assets/img/site-logo.png">
+    <meta name="description" content="Open up a world of possibilities with Krust Investments">
+    <meta name="keywords" content="Investments, krust, trade">
+
+    <!-- nice select 2 -->
+    <link rel="stylesheet" href="../assets/nice-select-2/nice-select2.css">
+
+    <!-- style added here ================ -->
+    <link rel="stylesheet" href="../assets/css/admin-layout.css">
+    <link rel="stylesheet" href="../assets/css/admin-style.css">
+
+    <!-- font-awesome added here ================ -->
+    <link rel="stylesheet" href="../assets/font-awesome-6.6.6-web/css/all.min.css">
+
+    <!-- jQuery added here ================ -->
+    <script src="../assets/jQuery/jquery-3.7.1.min.js"></script>
+
+    <!-- Data table added here ================ -->
+    <link rel="stylesheet" href="../assets/data-table-2.1.4/dataTables.dataTables.css" />
+</head>
+
+<body>
+    <nav id="left-nav" class="left-nav">
+        <a href="../index.html" class="logo-area">
+            <img src="../assets/img/site-logo.png" alt="Site Logo" class="site-logo">
+            <span class="site-name">Krust-Investments</span>
+        </a>
+        <ul class="nav-menu list-style-none scroll">
+            <li>
+                <a class="active" href="./index.html">
+                    <span class="icon">
+                        <img src="../assets/img/icon-menu-category.png">
+                    </span>
+                    <span class="name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="./manage-user.html">
+                    <span class="icon">
+                        <i class="fa-regular fa-circle-user"></i>
+                    </span>
+                    <span class="name">Manage Users</span>
+                </a>
+            </li>
+            <li>
+                <a href="deposit.html">
+                    <span class="icon">
+                        <i class="fa-regular fa-credit-card"></i>
+                    </span>
+                    <span class="name">Deposits</span>
+                </a>
+            </li>
+            <li>
+                <a href="./withdraw.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-landmark"></i>
+                    </span>
+                    <span class="name">Withdrawals</span>
+                </a>
+            </li>
+            <li>
+                <a href="./trades.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </span>
+                    <span class="name">Trades</span>
+                </a>
+            </li>
+            <li>
+                <a href="./assets.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </span>
+                    <span class="name">Assets</span>
+                </a>
+            </li>
+            <li>
+                <a href="./software.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-server"></i>
+                    </span>
+                    <span class="name">Softwares</span>
+                </a>
+            </li>
+            <li>
+                <a href="./admin-settings.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+                    <span class="name">Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="../login.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </span>
+                    <span class="name">Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <header class="top-header">
+        <div class="container">
+            <h1 class="page-title">Overview</h1>
+            <a id="btn-nav-toggle" class="btn-nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+            <div class="dropdown w-max">
+                <a class="btn btn-admin-dropdown">
+                    <span class="icon">
+                        <img src="../assets/img/site-logo.png">
+                    </span>
+                    <span>Admin</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </a>
+
+                <ul class="dropdown-menu d-flex flex-column">
+                    <li class="dropdown-item">
+                        Admin Name
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="../login.html" class="d-flex justify-content-between align-items-center">
+                            <span>Logout</span>
+                            <span class="icon">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-area scroll">
+        <div class="container dashboard-container">
+            <section class="user-preview-section">
+                <h3 class="section-title">user overview</h3>
+                <div class="section-article">
+                    <a href="" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-men-group.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Total Users</div>
+                            <div class="card-value">1,200</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-user.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Active Users</div>
+                            <div class="card-value">1,000</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-kyc-verified-men.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">KYC Verified</div>
+                            <div class="card-value">1,200</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-kyc-unverified-men.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">KYC Unverified</div>
+                            <div class="card-value">100</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="deposit-section">
+                <h3 class="section-title">user overview</h3>
+                <div class="section-article">
+                    <a href="" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-deposit.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Total Deposits</div>
+                            <div class="card-value">$ 150,000,000</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-load-pending.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Pending Deposits</div>
+                            <div class="card-value">$ 125,000</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-deposit.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Total Withdrawals</div>
+                            <div class="card-value">$ 50,000,000</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-load-pending.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Pending Withdrawal</div>
+                            <div class="card-value">$ 320,000</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-cancel-deposit.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Cancelled Deposits</div>
+                            <div class="card-value">$ 25,000</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-percentage-deposit-charge.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Deposit Charge</div>
+                            <div class="card-value">$ 200</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-cancel-deposit.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Cancelled Withdrawals</div>
+                            <div class="card-value">$ 1,000,000</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-percentage-deposit-charge.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Withdrawal Charge</div>
+                            <div class="card-value">$ 0.00</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="dashboard-donate">
+                <h3 class="section-title">Log In Stats</h3>
+                <div class="dashboard-donate-group">
+                    <div class="card">
+                        <div class="donate-chart" title="By Browser" series="[50, 25, 25]"
+                            labels="['Chrome - 50%', 'Safari - 25%', 'Others - 25%']"></div>
+                    </div>
+                    <div class="card">
+                        <div class="donate-chart" title="By OS (Operating System)" series="[50, 17.5, 25, 32.5]"
+                            labels="['Windows - 50%', 'MacOS - 17.5%', 'Android - 25%', 'IOS - 32.5%']"></div>
+                    </div>
+                    <div class="card">
+                        <div class="donate-chart" title="By Country" series="[50, 25, 25]"
+                            labels="['United Kingdom - 50%', 'United States - 25%', 'Germany - 25%']"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <footer>
+        <!-- font-awesome added here ================ -->
+        <script src="../assets/font-awesome-6.6.6-web/js/all.min.js"></script>
+        <!-- nice select 2 -->
+        <script src="../assets/nice-select-2/nice-select2.js"></script>
+
+        <!-- apex charts js added here ======================= -->
+        <script type="text/javascript" src="../assets/apexcharts/apexcharts.js"></script>
+
+        <!-- Data table added here ================ -->
+        <script src="../assets/data-table-2.1.4/dataTables.js"></script>
+
+        <!-- admin script added here ======================= -->
+        <script src="../assets/js/admin-layout.js"></script>
+        <script src="../assets/js/admin-script.js"></script>
+
+
+        <!-- font added here (ital + Merriweather) ================ -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet">
+    </footer>
+
+    <script src="../assets/js/admin-head-foot.js"></script>
+</body>
+
+</html>
