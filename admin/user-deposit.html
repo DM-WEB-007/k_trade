@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="getHead">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title parent="user-manage">Admin | Manage User</title>
+    <link rel="icon" href="../assets/img/site-logo.png">
+    <meta name="description" content="Open up a world of possibilities with krust investments">
+    <meta name="keywords" content="Investments, trade">
+
+
+    <!-- jQuery added here ================ -->
+    <script src="../assets/jQuery/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <main class="main-area">
+        <div class="container user-details-container">
+            <div class="partial-view-header">
+                <div class="back-btn-area">
+                    <a href="./user-manage.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </span>
+                        <span>Manage Users</span>
+                    </a>
+                    <span>/</span>
+                    <a href="./user-details.html">Michael Michaelson</a>
+                    <span>/</span>
+                    <span>Deposits</span>
+                </div>
+                <div class="btn-area">
+                    <a href="../user-dashboard.html" class="btn btn-login-as-user">Log in As User</a>
+                    <!-- <a href="" class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></a> -->
+                    <div class="dropdown w-max">
+                        <a class="btn btn-dropdown">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </a>
+
+                        <ul class="list-style-none dropdown-menu d-flex flex-column">
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Edit Plan</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Edit Trade limit</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Edit Trade Result</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default text-danger" style="text-decoration: line-through;">View
+                                    Password</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Verified</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Upgrade Prompt</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Certificate Prompt</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Identity Prompt</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Custom Prompt</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Demo</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Delete User</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <section class="user-preview-section">
+                <div class="section-article user-balance-controllers">
+                    <a href="./user-balance.html" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-money.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Balance</div>
+                            <div class="card-value">$ 150,000</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="./user-deposit.html" class="card active">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-card.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Deposit</div>
+                            <div class="card-value">$ 100,000</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="./user-withdraw.html" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-withdraw.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Withdrawals</div>
+                            <div class="card-value">$ 75,000</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                    <a href="./user-transaction.html" class="card">
+                        <div class="card-icon">
+                            <img src="../assets/img/admin-icon-sorting.png">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Transactions</div>
+                            <div class="card-value">124</div>
+                        </div>
+                        <span class="arrow-icon">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- <div class="section-title">Deposit History</div> -->
+                <div class="deposit-table-area table-area scroll">
+                    <table class="deposit-table w-100">
+                        <thead>
+                            <tr>
+                                <th>Transaction ID</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Method</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10182391219720300188</td>
+                                <td>08 - 08 - 2024</td>
+                                <td>$ 25,000</td>
+                                <td>Bitcoin</td>
+                                <td class="text-primary">Successful</td>
+                                <td>
+                                    <div class="dropdown w-max">
+                                        <a class="btn-dropdown">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </a>
+
+                                        <ul class="list-style-none dropdown-menu d-flex flex-column">
+                                            <li class="dropdown-item">
+                                                <a class="btn" href="">Approve Deposit</a>
+                                            </li>
+                                            <li class="dropdown-item">
+                                                <a class="btn" href="">Cancel Deposit</a>
+                                            </li>
+                                            <li class="dropdown-item">
+                                                <a class="btn btn-delete-tr">Delete Deposit</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10182391219720300188</td>
+                                <td>08 - 08 - 2024</td>
+                                <td>$ 25,000</td>
+                                <td>Bitcoin</td>
+                                <td class="text-danger">Cancelled</td>
+                                <td>
+                                    <div class="dropdown w-max">
+                                        <a class="btn-dropdown">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </a>
+
+                                        <ul class="list-style-none dropdown-menu d-flex flex-column">
+                                            <li class="dropdown-item">
+                                                <a class="btn" href="">Approve Deposit</a>
+                                            </li>
+                                            <li class="dropdown-item">
+                                                <a class="btn" href="">Cancel Deposit</a>
+                                            </li>
+                                            <li class="dropdown-item">
+                                                <a class="btn btn-delete-tr">Delete Deposit</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10182391219720300188</td>
+                                <td>08 - 08 - 2024</td>
+                                <td>$ 25,000</td>
+                                <td>Bitcoin</td>
+                                <td class="text-warning">Pending</td>
+                                <td>
+                                    <div class="dropdown w-max">
+                                        <a class="btn-dropdown">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </a>
+
+                                        <ul class="list-style-none dropdown-menu d-flex flex-column">
+                                            <li class="dropdown-item">
+                                                <a class="btn" href="">Approve Deposit</a>
+                                            </li>
+                                            <li class="dropdown-item">
+                                                <a class="btn" href="">Cancel Deposit</a>
+                                            </li>
+                                            <li class="dropdown-item">
+                                                <a class="btn btn-delete-tr">Delete Deposit</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+
+
+    <!-- admin script added here ======================= -->
+    <script src="../assets/js/admin-head-foot.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Krust Investment | User Dashboard</title>
+    <link rel="icon" href="../assets/img/site-logo.png">
+    <meta name="description" content="Open up a world of possibilities with krust investments">
+    <meta name="keywords" content="Investments, trade">
+
+    <!-- nice select 2 -->
+    <link rel="stylesheet" href="../assets/nice-select-2/nice-select2.css">
+
+    <!-- style added here ================ -->
+    <link rel="stylesheet" href="../assets/css/user-style.css">
+
+    <!-- font-awesome added here ================ -->
+    <link rel="stylesheet" href="../assets/font-awesome-6.6.6-web/css/all.min.css">
+
+    <!-- Data table added here ================ -->
+    <link rel="stylesheet" href="../assets/data-table-2.1.4/dataTables.dataTables.css" />
+
+    <!-- jQuery added here ================ -->
+    <script src="../assets/jQuery/jquery-3.7.1.min.js"></script>
+</head>
+
+<body class="">
+    <header>
+        <div class="main-header">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center g-10">
+                <!-- <div class="user-logo-area-brokerage"> -->
+                <!-- <div class="user-logo-area-krust"> -->
+                <div class="">
+                    <a href="../index.html" class="logo-area d-flex align-items-center g-4">
+                        <img src="../assets/img/site-logo-krust.png" alt="Site Logo" class="site-logo">
+
+                    </a>
+                    <div class="account-status-header d-flex align-items-center g-10">
+                        <span class="dot"></span>
+                        <span class="account-status text-primary">Active Account</span>
+                    </div>
+                </div>
+
+                <a id="btn-nav-toggle" class="btn-nav-toggle">
+                    <img src="../assets/img/icon-menu-category.png">
+                </a>
+                <dl class="header-btns d-flex flex-wrap g-8">
+                    <dt>
+                        <a class="btn btn-deposit g-8" href="./user-deposit.html">
+                            <i class="fa-regular fa-credit-card"></i>
+                            <span>Deposit</span>
+                        </a>
+                    </dt>
+                    <dt class="dropdown">
+                        <a class="btn btn-account-balance">
+                            <span class="text">Account Balance</span>
+                            <span class="account-amount">$100,000.00</span>
+                            <span class="icon"><i class="fa-solid fa-angle-down"></i></span>
+                        </a>
+
+                        <dl class="dropdown-menu d-flex flex-column">
+                            <dt class="dropdown-item">Current Plan: <span class="user-plan-name">Tier 1</span> </dt>
+                            <dt class="dropdown-item">
+                                <div class="account-status-header d-flex align-items-center g-10">
+                                    <span class="dot"></span>
+                                    <span class="account-status text-primary">Active Account</span>
+                                </div>
+                                <div class="account-amount-header">
+                                    $100,000.00
+                                </div>
+                            </dt>
+                            <dt class="dropdown-item">
+                                <a href="../login.html">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;
+                                    <span>Logout</span>
+                                </a>
+                            </dt>
+                        </dl>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <nav id="left-nav" class="left-nav">
+            <ul class="nav nav-tabs scroll">
+                <li class="nav-item active">
+                    <a data-toggle="tab" href="#admin-account-grid">
+                        <!-- <i class="fa-regular fa-circle-user"></i> -->
+                        <img width="50" height="50" src="../assets/img/user.png"
+                            style="object-fit: cover; border-radius: 50%; border: 3px solid white;">
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-deposit.html">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <span>Deposits</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" href="#trading-history">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>Trading History</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-market-watch.html">
+                        <i class="fa-solid fa-list-ul"></i>
+                        <span>Market Watch</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-trade.html">
+                        <i class="fa-solid fa-arrow-down-up-across-line"></i>
+                        <span>Trade</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-education.html">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Education</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-market-news.html">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <span>Market News</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../login.html">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <article class="tab-content trade-article">
+            <section id="admin-account-grid" class="tab-pane in active admin-account-grid d-grid">
+                <div class="balance-board d-grid align-items-center">
+                    <div class="btn-area d-grid g-25">
+                        <a class="btn btn-deposit g-8" href="./user-deposit.html">
+                            <i class="fa-regular fa-credit-card"></i>
+                            <span>Deposit</span>
+                        </a>
+                        <a class="btn btn-withdraw g-8" href="#">
+                            <i class="fa-solid fa-landmark"></i>
+                            <span>Withdraw</span>
+                        </a>
+                    </div>
+                    <div class="card-group d-grid w-100 align-items-start">
+                        <div class="card d-grid g-4">
+                            <div class="card-title">Total balance</div>
+                            <div class="card-price d-flex align-items-center g-8">
+                                <img src="../assets/img/flag-eur.png" alt="Eur currency">
+                                <div class="amount">$100,000.00</div>
+                            </div>
+                            <div class="card-status d-flex align-items-center g-3 text-primary">
+                                <div class="percentage">1.5%</div>
+                                <span class="status up">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card d-grid g-4">
+                            <div class="card-title">Total Deposit</div>
+                            <div class="card-price d-flex align-items-center g-8">
+                                <img src="../assets/img/flag-eur.png" alt="Eur currency">
+                                <div class="amount">$40,000.00</div>
+                            </div>
+                        </div>
+                        <div class="card d-grid g-4">
+                            <div class="card-title">Profitable Trades</div>
+                            <div class="card-price d-flex align-items-center g-8">
+                                <img src="../assets/img/flag-eur.png" alt="Eur currency">
+                                <div class="amount">17/20</div>
+                            </div>
+                            <div class="card-status d-flex align-items-center g-4 text-danger-2">
+                                <div class="percentage">0.5%</div>
+                                <span class="status up">
+                                    <i class="fa-solid fa-arrow-down"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="company-trade-percentage-card-group d-grid">
+                    <div class="card d-grid align-items-center">
+                        <img src="../assets/img/company-bitcoin_symbol.svg.png" alt="company logo">
+                        <div class="card-title-area">
+                            <div class="card-title">Bitcoin</div>
+                            <div class="card-price">
+                                <span>USD</span>
+                                <span class="amount">64,000</span>
+                            </div>
+                        </div>
+                        <div class="card-status d-flex align-items-center g-4 text-primary">
+                            <div class="percentage">1.5%</div>
+                            <span class="status">
+                                <i class="fa-solid fa-arrow-up"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card d-grid align-items-center">
+                        <img src="../assets/img/company-apple-T.png" alt="company logo">
+                        <div class="card-title-area">
+                            <div class="card-title">Bitcoin</div>
+                            <div class="card-price">
+                                <span>USD</span>
+                                <span class="amount">64,000</span>
+                            </div>
+                        </div>
+                        <div class="card-status d-flex align-items-center g-4 text-danger">
+                            <div class="percentage">0.5%</div>
+                            <span class="status">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card d-grid align-items-center">
+                        <img src="../assets/img/company-amazon.png" alt="company logo">
+                        <div class="card-title-area">
+                            <div class="card-title">Amazon</div>
+                            <div class="card-price">
+                                <span>USD</span>
+                                <span class="amount">64,000</span>
+                            </div>
+                        </div>
+                        <div class="card-status d-flex align-items-center g-4 text-primary">
+                            <div class="percentage">1.5%</div>
+                            <span class="status">
+                                <i class="fa-solid fa-arrow-up"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card d-grid align-items-center">
+                        <img src="../assets/img/company-solana_symbol.svg.png" alt="company logo">
+                        <div class="card-title-area">
+                            <div class="card-title">Solana</div>
+                            <div class="card-price">
+                                <span>USD</span>
+                                <span class="amount">64,000</span>
+                            </div>
+                        </div>
+                        <div class="card-status d-flex align-items-center g-4 text-danger">
+                            <div class="percentage">0.5%</div>
+                            <span class="status">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="company-trade-percentage-card-group d-grid">
+                    <div class="card d-grid align-items-center">
+                        <img src="../assets/img/profit.png" alt="company logo">
+                        <div class="card-title-area">
+                            <div class="card-title">Profit</div>
+                            <div class="card-price">
+                                <span>USD</span>
+                                <span class="amount">1,26,000</span>
+                            </div>
+                        </div>
+                        <div class="card-status d-flex align-items-center g-4 text-primary">
+                            <div class="percentage">17.5%</div>
+                            <span class="status">
+                                <i class="fa-solid fa-arrow-up"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card d-grid align-items-center">
+                        <img src="../assets/img/loan.png" alt="company logo">
+                        <div class="card-title-area">
+                            <div class="card-title">Loan</div>
+                            <div class="card-price">
+                                <span>USD</span>
+                                <span class="amount">5,000</span>
+                            </div>
+                        </div>
+                        <div class="card-status d-flex align-items-center g-4 text-danger">
+                            <div class="percentage">2.5%</div>
+                            <span class="status">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card d-grid align-items-center">
+                        <img src="../assets/img/insurance.png" alt="company logo">
+                        <div class="card-title-area">
+                            <div class="card-title">Insurance</div>
+                            <div class="card-price">
+                                <span>USD</span>
+                                <span class="amount">13,000</span>
+                            </div>
+                        </div>
+                        <div class="card-status d-flex align-items-center g-4 text-primary">
+                            <div class="percentage">3.9%</div>
+                            <span class="status">
+                                <i class="fa-solid fa-arrow-up"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card d-grid align-items-center">
+                        <img src="../assets/img/credit.png" alt="company logo">
+                        <div class="card-title-area">
+                            <div class="card-title">Credit</div>
+                            <div class="card-price">
+                                <span>USD</span>
+                                <span class="amount">1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-status d-flex align-items-center g-4 text-danger">
+                            <div class="percentage">20%</div>
+                            <span class="status">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav nav-tabs navigation-card-group list-style-none d-grid">
+                    <li class="nav-item">
+                        <a class="card d-grid align-items-center g-8" data-toggle="tab" href="#personal-information">
+                            <div class="icon">
+                                <i class="fa-regular fa-circle-user"></i>
+                            </div>
+                            <p>Personal information</p>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="card d-grid align-items-center g-8" data-toggle="tab" href="#account-verification">
+                            <div class="icon">
+                                <i class="fa-solid fa-fingerprint"></i>
+                            </div>
+                            <p>Verification</p>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="card d-grid align-items-center g-8" data-toggle="tab" href="#security-settings">
+                            <div class="icon">
+                                <i class="fa-solid fa-gear"></i>
+                                <!-- <img src="../assets/img/Icon-gear.png" alt="settings icon"> -->
+                            </div>
+                            <p>Security settings</p>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="card d-grid align-items-center g-8" href="./user-trade.html">
+                            <div class="icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <p>Trade</p>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="card d-grid align-items-center g-8" data-toggle="tab" href="#live-chat-section">
+                            <div class="icon">
+                                <i class="fa-brands fa-rocketchat"></i>
+                                <!-- <img src="../assets/img/Icon-chat.png" alt=""> -->
+                            </div>
+                            <p>Live Chat</p>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section id="personal-information" class="tab-pane in personal-information common-section">
+                <div class="back-btn-area">
+                    <ul class="nav nav-tabs list-style-none">
+                        <li class="nav-item d-flex align-items-center g-15">
+                            <a class="btn-tab d-flex align-items-center g-15" data-toggle="tab"
+                                href="#admin-account-grid">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                <span class="text">Account</span>
+                            </a>
+                            <p class="section-name d-flex g-15">
+                                <span>/</span>
+                                <span>Personal Information</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <form action="" method="post">
+                    <div class="personal-info-card-area">
+                        <div class="area-title">personal information</div>
+                        <div class="card common-card">
+                            <div class="card-body d-grid">
+                                <div class="input-group">
+                                    <label class="form-label">First Name</label>
+                                    <input class="form-control" type="text" placeholder="Enter First Name">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input class="form-control" type="text" placeholder="Enter Last Name">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Email address</label>
+                                    <input class="form-control" type="email" placeholder="Enter email address">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Phone number</label>
+                                    <input class="form-control" type="text" placeholder="Enter Phone number">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Country</label>
+                                    <select class="form-control" id="userCountry" searchable="true">
+                                        <option value="0">Select Country</option>
+                                        <option value="United States">United States</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="Austria">Austria</option>
+                                        <option value="Belgium">Belgium</option>
+                                        <option value="Denmark">Denmark</option>
+                                        <option value="Finland">Finland</option>
+                                        <option value="France">France</option>
+                                        <option value="Germany">Germany</option>
+                                        <option value="Iceland">Iceland</option>
+                                        <option value="Ireland">Ireland</option>
+                                        <option value="Italy">Italy</option>
+                                        <option value="Luxembourg">Luxembourg</option>
+                                        <option value="Netherlands">Netherlands</option>
+                                        <option value="Norway">Norway</option>
+                                        <option value="Spain">Spain</option>
+                                        <option value="Sweden">Sweden</option>
+                                        <option value="Switzerland">Switzerland</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="Portugal">Portugal</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="New Zealand">New Zealand</option>
+                                        <option value="Japan">Japan</option>
+                                        <option value="South Korea">South Korea</option>
+                                        <option value="Singapore">Singapore</option>
+                                        <option value="Israel">Israel</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="btn btn-update-profile w-max">Update Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-picture-card-area">
+                        <div class="area-title">Profile picture</div>
+                        <div class="card common-card">
+                            <div class="card-body d-grid">
+                                <div class="upload-files-container w-100 overflowY-hidden">
+                                    <div class="drag-file-area align-content-center">
+                                        <img id="user-image" class="user-image d-none"
+                                            src="https://picsum.photos/300/200?grayscale" alt="">
+                                        <label for="upload-dp-input"
+                                            class="upload-icon attach-icon mx-auto d-flex justify-content-center align-items-center">
+                                            <i class="fa-solid fa-link"></i>
+                                            <!-- <img src="../assets/img/Icon-attach.png"> -->
+                                        </label>
+                                        <p class="attach-note dynamic-message">
+                                            Drop a file here to upload <br> Photo must be 5MB or less
+                                        </p>
+                                        <label class="label d-none">
+                                            <span class="browse-files">
+                                                <input id="upload-dp-input" type="file" accept="image/*"
+                                                    class="default-file-input" />
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <p class="cannot-upload-message">
+                                        <strong>Error : </strong> <span> Please select a file
+                                            first</span>
+                                        <span class="cancel-alert-button btn-close">❌</span>
+                                    </p>
+
+                                    <div class="file-block">
+                                        <div class="file-info">
+                                            <span class="file-name"
+                                                style="max-width: 230px; padding-right: 5px; overflow: hidden;">
+                                            </span>
+                                            | <span class="file-size"> </span>
+                                        </div>
+                                        <span class="material-icons remove-file-icon">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                        </span>
+                                        <div class="progress-bar"> </div>
+                                    </div>
+                                </div>
+                                <fieldset>
+                                    <p>Prohibited Pictures:</p>
+                                    <ul>
+                                        <li>Photos explicit or inappropriate nature</li>
+                                        <li>Photos involving people younger than 18 years old</li>
+                                        <li>Third-party copyrighted protected photos</li>
+                                        <li>AI generated photos</li>
+                                        <li class="text-danger">Images not in JPG, PNG or GIF</li>
+                                        <li>Photos larger than 5MB</li>
+                                    </ul>
+                                    <p>Your face must be shown clearly. All photos uploaded must abide by these
+                                        guideline or the photo will be removed.</p>
+                                </fieldset>
+                                <a type="button" id="dp-upload-btn" class="btn upload-button w-max">Upload picture</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section id="account-verification" class="tab-pane in account-verification common-section">
+                <div class="back-btn-area">
+                    <ul class="nav nav-tabs list-style-none">
+                        <li class="nav-item d-flex align-items-center g-15">
+                            <a class="btn-tab d-flex align-items-center g-15" data-toggle="tab"
+                                href="#admin-account-grid">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                <span class="text">Account</span>
+                            </a>
+                            <p class="section-name d-flex g-15">
+                                <span>/</span>
+                                <span>Verification</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="area-title d-flex justify-content-between">
+                    <h3>Identification</h3>
+                    <p class="verification-status d-flex align-items-center g-5">
+                        <!-- use $('.verification-status').attr "verified" for verify -->
+                        <span class="icon d-flex justify-content-center align-items-center"><i
+                                class="fa-solid fa-check"></i></span>
+                        <span class="status-text">Unverified</span>
+                    </p>
+                </div>
+                <div class="card common-card">
+                    <div class="card-header">
+                        <div class="card-title">Profile Status: Unverified</div>
+                    </div>
+                    <div class="card-body d-grid">
+                        <div class="input-group">
+                            <label class="form-label">Identity Card Type</label>
+                            <select class="form-control" id="identity-card-type">
+                                <option value="">Id Card</option>
+                                <option value="">Passport</option>
+                                <option value="">Birth Certificate</option>
+                            </select>
+                        </div>
+                        <div></div>
+                        <div class="input-group attach-file-input-group">
+                            <label class="form-label">Upload ID Front</label>
+                            <div class="form-control">
+                                <label for="identification-front-id"
+                                    class="attach-icon d-flex justify-content-between align-items-center w-100">
+                                    <span type="placeholder">Upload ID card Front</span>
+                                    <input id="identification-front-id" class="d-none" type="file">
+                                    <i class="fa-solid fa-link"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-group attach-file-input-group">
+                            <label class="form-label">Upload ID back</label>
+                            <div class="form-control">
+                                <label for="identification-back-id"
+                                    class="attach-icon d-flex justify-content-between align-items-center w-100">
+                                    <span type="placeholder">Upload ID card back</span>
+                                    <input id="identification-back-id" class="d-none" type="file"
+                                        placeholder="Upload ID card back">
+                                    <i class="fa-solid fa-link"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-group attach-file-input-group">
+                            <label class="form-label">Upload Proof Of Address</label>
+                            <div class="form-control">
+                                <label for="user-proof-of-address"
+                                    class="attach-icon d-flex justify-content-between align-items-center w-100">
+                                    <span type="placeholder">Upload Proof Of Address</span>
+                                    <input id="user-proof-of-address" class="d-none" type="file">
+                                    <i class="fa-solid fa-link"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-group attach-file-input-group">
+                            <label class="form-label">Upload Selfie</label>
+                            <div class="form-control">
+                                <label for="attach-user-selfie"
+                                    class="attach-icon d-flex justify-content-between align-items-center w-100">
+                                    <span type="placeholder">Upload Selfie</span>
+                                    <input id="attach-user-selfie" class="d-none" type="file" accept="image/*"
+                                        capture="environment">
+                                    <i class="fa-solid fa-camera"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-submit-identification w-max">Submit identification</a>
+                    </div>
+                </div>
+                <div class="card common-card">
+                    <div class="card-header">
+                        <div class="card-title">Documents Uploaded and Confirmed</div>
+                    </div>
+                    <div class="card-footer check-files-valid-grid d-grid">
+                        <div class="card d-flex justify-content-between align-items-center">
+                            <p>ID Front</p>
+                            <p class="document-verification-status d-flex justify-content-center align-items-center g-5"
+                                data-label="identification-front-id">
+                                <!-- use $('.verification-status').attr "verified" for verify -->
+                                <span class="icon d-flex justify-content-center align-items-center"><i
+                                        class="fa-solid fa-check"></i></span>
+                            </p>
+                        </div>
+                        <div class="card d-flex justify-content-between align-items-center">
+                            <p>ID Back</p>
+                            <p class="document-verification-status d-flex justify-content-center align-items-center g-5"
+                                data-label="identification-back-id">
+                                <!-- use $('.verification-status').attr "verified" for verify -->
+                                <span class="icon d-flex justify-content-center align-items-center"><i
+                                        class="fa-solid fa-check"></i></span>
+                            </p>
+                        </div>
+                        <div class="card d-flex justify-content-between align-items-center">
+                            <p>proof of address</p>
+                            <p class="document-verification-status d-flex justify-content-center align-items-center g-5"
+                                data-label="user-proof-of-address">
+                                <!-- use $('.verification-status').attr "verified" for verify -->
+                                <span class="icon d-flex justify-content-center align-items-center"><i
+                                        class="fa-solid fa-check"></i></span>
+                            </p>
+                        </div>
+                        <div class="card d-flex justify-content-between align-items-center">
+                            <p>upload selfie</p>
+                            <p class="document-verification-status d-flex justify-content-center align-items-center g-5"
+                                data-label="attach-user-selfie">
+                                <!-- use $('.verification-status').attr "verified" for verify -->
+                                <span class="icon d-flex justify-content-center align-items-center"><i
+                                        class="fa-solid fa-check"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="security-settings" class="tab-pane common-section in security-settings">
+                <div class="back-btn-area">
+                    <ul class="nav nav-tabs list-style-none">
+                        <li class="nav-item d-flex align-items-center g-15">
+                            <a class="btn-tab d-flex align-items-center g-15" data-toggle="tab"
+                                href="#admin-account-grid">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                <span class="text">Account</span>
+                            </a>
+                            <p class="section-name d-flex g-15">
+                                <span>/</span>
+                                <span>Settings</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="area-title">Change Password</div>
+                <div class="card common-card">
+                    <div class="card-body d-grid">
+                        <div class="input-group">
+                            <label class="form-label">new Password</label>
+                            <input class="form-control form-eye" type="password" name="password" id="set-new-password"
+                                placeholder="Enter password">
+                            <label for="set-new-password" class="eye-icon">
+                                <i class="fa-regular fa-eye-slash"></i>
+                            </label>
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Update Password</label>
+                            <input class="form-control form-eye" type="password" name="password"
+                                id="set-new-password-retype" placeholder="Enter password">
+                            <label for="set-new-password-retype" class="eye-icon">
+                                <i class="fa-regular fa-eye-slash"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-update-password w-max">Update password</a>
+                    </div>
+                </div>
+                <div class="area-title">Language and Currency</div>
+                <div class="card common-card">
+                    <div class="card-body d-grid">
+                        <div class="input-group">
+                            <label class="form-label">Country</label>
+                            <select class="form-control" id="dashboard-currency" searchable="true">
+                                <!-- <option value="0">Select Country</option> -->
+                                <option value="">Dollar (USD)</option>
+                                <option value="">Taka (BDT)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Profile Language</label>
+                            <select class="form-control" id="profile-language" searchable="true">
+                                <!-- <option value="0">Select Country</option> -->
+                                <option value="">Arabic</option>
+                                <option value="">English</option>
+                                <option value="">Bangla</option>
+                                <option value="">Hindi</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-update-lang-currancy w-max">Save changes</a>
+                    </div>
+                </div>
+                <div class="area-title">Activate Two Factor (2FA) Authentication</div>
+                <div class="card common-card card-2fa">
+                    <div class="card-body d-grid">
+                        <div class="input-group-area d-flex flex-column justify-content-between">
+                            <div class="input-group">
+                                <label class="form-label">Activation code for Google Authentication</label>
+                                <input class="form-control form-clone" type="text" id="activation-code-for-auth"
+                                    placeholder="Activation code">
+                                <label for="activation-code-for-auth" class="form-icon clone-icon">
+                                    <i class="fa-regular fa-clone"></i>
+                                </label>
+                            </div>
+                            <div class="input-group">
+                                <label class="form-label">Activate Authenticator and enter generated code in field
+                                    below</label>
+                                <input class="form-control" type="text" id="generated-qr-code"
+                                    placeholder="enter code here">
+                            </div>
+                        </div>
+                        <div class="qr-code-area">
+                            <div class="input-group">
+                                <label class="form-label">QR Code</label>
+                                <img class="img-qr-code" src="../assets/img/dev-qr-code.png" alt="qr-code">
+                            </div>
+                        </div>
+                        <a href="" class="btn btn-activation-2fa w-max">Activate 2FA Protection</a>
+                    </div>
+                </div>
+            </section>
+            <section id="live-chat-section" class="tab-pane common-section in live-chat-section">
+                <div class="back-btn-area">
+                    <ul class="nav nav-tabs list-style-none">
+                        <li class="nav-item d-flex align-items-center g-15">
+                            <a class="btn-tab d-flex align-items-center g-15" data-toggle="tab"
+                                href="#admin-account-grid">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                <span class="text">Account</span>
+                            </a>
+                            <p class="section-name d-flex g-15">
+                                <span>/</span>
+                                <span>Live chat</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card d-grid scroll">
+                    <div id="chat-body" class="card-body chat-body d-flex flex-column align-items-start w-100 g-20">
+                        <div class="admin-text-box d-flex align-items-start g-8">
+                            <div class="icon-area d-flex justify-content-center align-items-center">
+                                <img class="admin-icon" src="../assets/img/site-logo.png" alt="admin name">
+                            </div>
+                            <p class="message">Hello! How can i help you today?</p>
+                        </div>
+                        <div class="user-text-box d-flex align-items-start g-8">
+                            <p class="message">I want to make an enquiry about the account plans.</p>
+                            <div class="icon-area d-flex justify-content-center align-items-center">
+                                <img class="user-icon" src="../assets/img/site-logo.png" alt="user name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="input-group live-chat-input-group">
+                            <input class="form-control" type="text" id="live-chat-input"
+                                placeholder="Type your message here" autocomplete="off" autofocus>
+                            <a id="send-message" class="form-icon">
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+
+
+
+    <!-- font-awesome added here ================ -->
+    <script src="../assets/font-awesome-6.6.6-web/js/all.min.js"></script>
+    <!-- nice select 2 -->
+    <script src="../assets/nice-select-2/nice-select2.js"></script>
+
+    <!-- trading view js added here ======================= -->
+    <!-- <script type="text/javascript" src="../assets/trading-view-js/trading-view.js"></script> -->
+
+    <!-- apex charts js added here ======================= -->
+    <script type="text/javascript" src="../assets/apexcharts/apexcharts.js"></script>
+
+    <!-- upload file js add ======================= -->
+    <script src="../assets/upload-file/upload-file.js"></script>
+
+    <!-- Data table added here ================ -->
+    <script src="../assets/data-table-2.1.4/dataTables.js"></script>
+
+
+    <!-- script added here ======================= -->
+    <script src="../assets/js/user-script.js"></script>
+
+    <!-- font added here (ital + Merriweather) ================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+</body>
+
+</html>

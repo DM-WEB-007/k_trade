@@ -1,5 +1,5 @@
-var isAdvancedUpload = (function () {
-    var div = document.createElement('div');
+const isAdvancedUpload = (function () {
+    const div = document.createElement('div');
     return (
         ('draggable' in div || ('ondragstart' in div && 'ondrop' in div)) &&
         'FormData' in window &&
@@ -41,7 +41,7 @@ let fileFlag = 0;
 
 const validateFileType = (input) => {
     const filePath = input.value;
-    const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    const allowedExtensions = /(\.JPG|\.jpeg|\.png|\.gif)$/i;
 
     if (!allowedExtensions.exec(filePath)) {
         alert('Images not in JPG, PNG or GIF');
@@ -77,64 +77,71 @@ const removeImage = () => {
     $('.upload-files-container .attach-note').removeClass('d-none');
 };
 
-fileInput.addEventListener('click', () => {
-    fileInput.value = '';
-    console.log(fileInput.value);
-});
+fileInput &&
+    fileInput.addEventListener('click', () => {
+        fileInput.value = '';
+        console.log(fileInput.value);
+    });
 
-fileInput.addEventListener('change', (e) => {
-    console.log('insert image: ' + fileInput.value);
-    cancelAlertButton.click();
-    uploadButton.innerHTML = `Upload`;
-    fileName.innerHTML = fileInput.files[0].name;
-    const imgSize = (fileInput.files[0].size / 1024).toFixed(1);
-    if (imgSize > 4999) {
-        dragDropText.innerHTML = `[${imgSize}]: Your file size greater then 5MB!`;
-        console.warn('Your file size greater then 5MB', imgSize);
-        // return;
-    } else {
-        dragDropText.innerHTML = 'File Dropped Successfully!';
-        console.log('file size; ', imgSize);
-        addImage(e.target.files[0]);
-    }
-    fileSize.innerHTML = imgSize + ' KB';
-    uploadedFile.style.cssText = 'display: flex;';
-    progressBar.style.width = 0;
-    fileFlag = 0;
-});
+fileInput &&
+    fileInput.addEventListener('change', (e) => {
+        console.log('insert image: ' + fileInput.value);
+        cancelAlertButton.click();
+        uploadButton && (uploadButton.innerHTML = `Upload`);
+        fileName.innerHTML = fileInput.files[0].name;
+        const imgSize = (fileInput.files[0].size / 1024).toFixed(1);
+        if (imgSize > 4999) {
+            dragDropText.innerHTML = `[${imgSize}]: Your file size greater then 5MB!`;
+            console.warn('Your file size greater then 5MB', imgSize);
+            // return;
+        } else {
+            dragDropText.innerHTML = 'File Dropped Successfully!';
+            console.log('file size; ', imgSize);
+            addImage(e.target.files[0]);
+        }
+        fileSize.innerHTML = imgSize + ' KB';
+        uploadedFile.style.cssText = 'display: flex;';
+        progressBar.style.width = 0;
+        fileFlag = 0;
+    });
 
-uploadButton.addEventListener('click', () => {
-    const uploadedFileWidth = $('.upload-files-container .file-block').width();
-    console.log({ uploadedFileWidth });
+uploadButton &&
+    uploadButton.addEventListener('click', () => {
+        const uploadedFileWidth = $(
+            '.upload-files-container .file-block',
+        ).width();
+        console.log({ uploadedFileWidth });
 
-    let isFileUploaded = fileInput.value;
-    if (isFileUploaded != '') {
-        if (fileFlag == 0) {
-            fileFlag = 1;
-            var width = 0;
-            var id = setInterval(frame, 50);
-            function frame() {
-                if (width >= (uploadedFileWidth || 390)) {
-                    clearInterval(id);
-                    uploadButton.innerHTML = `<span class=" upload-button-icon"> check_circle </span> Uploaded`;
-                } else {
-                    width += 5;
-                    progressBar.style.width = width + 'px';
+        let isFileUploaded = fileInput.value;
+        if (isFileUploaded != '') {
+            if (fileFlag == 0) {
+                fileFlag = 1;
+                var width = 0;
+                var id = setInterval(frame, 50);
+                function frame() {
+                    if (width >= (uploadedFileWidth || 390)) {
+                        clearInterval(id);
+                        uploadButton &&
+                            (uploadButton.innerHTML = `<span class=" upload-button-icon"> check_circle </span> Uploaded`);
+                    } else {
+                        width += 5;
+                        progressBar.style.width = width + 'px';
+                    }
                 }
             }
+        } else {
+            cannotUploadMessage.style.cssText =
+                'display: grid; animation: fadeIn linear 1.5s;';
+            console.warn('Please select a file first...');
         }
-    } else {
-        cannotUploadMessage.style.cssText =
-            'display: grid; animation: fadeIn linear 1.5s;';
-        console.warn('Please select a file first...');
-    }
-});
+    });
 
-cancelAlertButton.addEventListener('click', () => {
-    cannotUploadMessage.style.cssText = 'display: none;';
-});
+cancelAlertButton &&
+    cancelAlertButton.addEventListener('click', () => {
+        cannotUploadMessage.style.cssText = 'display: none;';
+    });
 
-if (isAdvancedUpload) {
+if (isAdvancedUpload && draggableFileArea) {
     [
         'drag',
         'dragstart',
@@ -160,7 +167,7 @@ if (isAdvancedUpload) {
 
     draggableFileArea.addEventListener('drop', (e) => {
         cancelAlertButton.click();
-        uploadButton.innerHTML = `Upload Picture`;
+        uploadButton && (uploadButton.innerHTML = `Upload Picture`);
 
         let files = e.dataTransfer.files;
         fileInput.files = files;
@@ -186,11 +193,12 @@ if (isAdvancedUpload) {
     });
 }
 
-removeFileButton.addEventListener('click', () => {
-    uploadedFile.style.cssText = 'display: none;';
-    fileInput.value = '';
-    dragDropText.innerHTML =
-        'Drop a file here to upload <br> Photo must be 5MB or less';
-    uploadButton.innerHTML = `Upload`;
-    removeImage();
-});
+removeFileButton &&
+    removeFileButton.addEventListener('click', () => {
+        uploadedFile.style.cssText = 'display: none;';
+        fileInput.value = '';
+        dragDropText.innerHTML =
+            'Drop a file here to upload <br> Photo must be 5MB or less';
+        uploadButton && (uploadButton.innerHTML = `Upload`);
+        removeImage();
+    });

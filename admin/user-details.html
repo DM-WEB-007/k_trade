@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Admin | Manage User</title>
+    <title parent="user-manage">Admin | Manage User</title>
     <link rel="icon" href="../assets/img/site-logo.png">
-    <meta name="description" content="Open up a world of possibilities with Krust Investments">
-    <meta name="keywords" content="Investments, krust, trade">
+    <meta name="description" content="Open up a world of possibilities with krust investments">
+    <meta name="keywords" content="Investments, trade">
 
 
     <!-- jQuery added here ================ -->
@@ -21,7 +21,7 @@
         <div class="container user-details-container">
             <div class="partial-view-header">
                 <div class="back-btn-area">
-                    <a href="./manage-user.html">
+                    <a href="./user-manage.html">
                         <span class="icon">
                             <i class="fa-solid fa-arrow-left"></i>
                         </span>
@@ -30,12 +30,138 @@
                     <span>/</span>
                     <span>Michael Michaelson</span>
                 </div>
-                <a href="" class="btn">Log in As User</a>
+                <div class="btn-area">
+                    <div class="dropdown w-max">
+                        <a class="btn btn-user-tier-dropdown">
+                            <div class="d-grid">
+                                <span>USER TIER</span>
+                                <span>TIER 1</span>
+                            </div>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </a>
+
+                        <ul class="list-style-none dropdown-menu d-flex flex-column">
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">1</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">3</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">4</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="../user-dashboard.html" class="btn btn-login-as-user">Log in As User</a>
+                    <!-- <a href="" class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></a> -->
+                    <div class="dropdown w-max">
+                        <a class="btn btn-dropdown">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </a>
+
+                        <ul class="list-style-none dropdown-menu d-flex flex-column">
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Edit Plan</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" data-toggle="modal" href="#user-trade-limit">Edit Trade
+                                    limit</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" data-toggle="modal" href="#user-trade-result">Edit Trade
+                                    Result</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default text-danger" style="text-decoration: line-through;">View
+                                    Password</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Verified</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Upgrade Prompt</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Certificate Prompt</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Identity Prompt</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Custom Prompt</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Demo</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Delete User</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="drop-down-modal-area">
+                <div id="user-trade-limit" class="modal user-trade-limit">
+                    <div class="modal-dialog d-flex flex-column">
+                        <div class="modal-header">
+                            <div class="modal-title">Trade Limit: Michael Michaelson</div>
+                            <a class="icon btn-modal-close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </a>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <label class="form-label">Trade Limit</label>
+                                <input class="form-control" type="number" min="0" placeholder="0">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-modal-close btn-default">Close</a>
+                            <a class="btn btn-modal-close btn-confirm-info">update</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="user-trade-result" class="modal user-trade-result">
+                    <div class="modal-dialog d-flex flex-column">
+                        <div class="modal-header">
+                            <div class="modal-title">Trade Result: Michael Michaelson</div>
+                            <a class="icon btn-modal-close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </a>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <label class="form-label">Trade Result</label>
+                                <select class="form-control userTradeResult" id="userTradeResult" searchable="false">
+                                    <option value="Win">Win</option>
+                                    <option value="Loss">Loss</option>
+                                    <option value="Radom">Radom</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="user-trade-result-percentage" class="form-label">Percentage Win %</label>
+                                <input id="user-trade-result-percentage"
+                                    class="form-control user-trade-result-percentage" type="number" min="0" value="15"
+                                    placeholder="Enter Percentage">
+                            </div>
+                            <div class="input-group">
+                                <label class="form-label">margin</label>
+                                <input class="form-control" id="tradeResultMarginSet" type="text"
+                                    placeholder="Enter Margin as 2x 5x">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-modal-close btn-default">Close</a>
+                            <a class="btn btn-modal-close btn-confirm-info">update</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+
             <section class="user-preview-section">
-                <div class="section-article">
-                    <a href="" class="card">
+                <div class="section-article user-balance-controllers">
+                    <a href="./user-balance.html" class="card">
                         <div class="card-icon">
                             <img src="../assets/img/admin-icon-money.png">
                         </div>
@@ -47,7 +173,7 @@
                             <i class="fa-solid fa-angle-right"></i>
                         </span>
                     </a>
-                    <a href="" class="card">
+                    <a href="./user-deposit.html" class="card">
                         <div class="card-icon">
                             <img src="../assets/img/admin-icon-card.png">
                         </div>
@@ -59,7 +185,7 @@
                             <i class="fa-solid fa-angle-right"></i>
                         </span>
                     </a>
-                    <a href="" class="card">
+                    <a href="./user-withdraw.html" class="card">
                         <div class="card-icon">
                             <img src="../assets/img/admin-icon-withdraw.png">
                         </div>
@@ -71,7 +197,7 @@
                             <i class="fa-solid fa-angle-right"></i>
                         </span>
                     </a>
-                    <a href="" class="card">
+                    <a href="./user-transaction.html" class="card">
                         <div class="card-icon">
                             <img src="../assets/img/admin-icon-sorting.png">
                         </div>
@@ -85,15 +211,65 @@
                     </a>
                 </div>
                 <div class="section-article user-controllers">
-                    <a class="btn btn-primary">
+                    <a class="btn btn-primary" data-toggle="modal" href="#user-add-balance">
                         <span class="icon border-rounded"><i class="fa-solid fa-plus"></i></span>
                         <span class="text">Add Balance</span>
                     </a>
-                    <a class="btn btn-danger">
+                    <div id="user-add-balance" class="modal user-add-balance">
+                        <div class="modal-dialog d-flex flex-column">
+                            <div class="modal-header">
+                                <div class="modal-title">Add Balance</div>
+                                <a class="icon btn-modal-close">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </a>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group">
+                                    <label class="form-label">Amount</label>
+                                    <input class="form-control" type="number" min="0" placeholder="Enter Amount">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Remark</label>
+                                    <textarea class="form-control" rows="4" type="text"
+                                        placeholder="Enter Remark Yet"></textarea>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a class="btn btn-modal-close btn-confirm-info">Submit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-danger" data-toggle="modal" href="#user-subtract-balance">
                         <span class="icon border-rounded"><i class="fa-solid fa-minus"></i></span>
                         <span class="text">Subtract Balance</span>
                     </a>
-                    <a class="btn btn-info">
+                    <div id="user-subtract-balance" class="modal user-subtract-balance">
+                        <div class="modal-dialog d-flex flex-column">
+                            <div class="modal-header">
+                                <div class="modal-title">Add Balance</div>
+                                <a class="icon btn-modal-close">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </a>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group">
+                                    <label class="form-label">Amount</label>
+                                    <input class="form-control" type="number" min="0" placeholder="Enter Amount">
+                                </div>
+                                <div class="input-group">
+                                    <label class="form-label">Remark</label>
+                                    <textarea class="form-control" rows="4" type="text"
+                                        placeholder="Enter Remark Yet"></textarea>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a class="btn btn-modal-close btn-confirm-info">Submit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="./user-login-history.html" class="btn btn-info">
                         <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
                         <span class="text">Log In History</span>
                     </a>
@@ -136,16 +312,24 @@
                             <input class="form-control" type="text" placeholder="Enter City">
                         </div>
                         <div class="input-group">
+                            <label class="form-label">zip code</label>
+                            <input class="form-control" type="number" min="0" placeholder="Enter zip code here">
+                        </div>
+                        <div class="input-group grid-column-lg-2">
                             <label class="form-label">Address</label>
                             <input class="form-control" type="text" placeholder="Enter Address">
                         </div>
+                        <div class="input-group grid-column-lg-2">
+                            <label class="form-label">user password</label>
+                            <input class="form-control" type="text" placeholder="Enter user password">
+                        </div>
                     </div>
                 </div>
-                <br>
-                <div class="section-title">Verification Status</div>
+
+                <div class="section-title">System Verification</div>
                 <div class="card check-files-valid-area">
                     <div class="card-header">
-                        <div class="verified-qty">1/4 Verified</div>
+                        <div class="verified-qty">1/3 Verified</div>
                     </div>
                     <div class="card-body check-files-valid-grid d-grid">
                         <div class="card d-flex justify-content-between align-items-center">
@@ -167,7 +351,7 @@
                             </p>
                         </div>
                         <div class="card d-flex justify-content-between align-items-center">
-                            <p>2FA Verification/p>
+                            <p>2FA Verification</p>
                             <p
                                 class="document-verification-status d-flex justify-content-center align-items-center g-5">
                                 <!-- use $('.verification-status').attr "verified" for verify -->
@@ -175,14 +359,228 @@
                                         class="fa-solid fa-check"></i></span>
                             </p>
                         </div>
-                        <div class="card d-flex justify-content-between align-items-center">
+                        <!-- <div class="card d-flex justify-content-between align-items-center">
                             <p>KYC</p>
                             <p
                                 class="document-verification-status d-flex justify-content-center align-items-center g-5">
-                                <!-- use $('.verification-status').attr "verified" for verify -->
                                 <span class="icon d-flex justify-content-center align-items-center"><i
                                         class="fa-solid fa-check"></i></span>
                             </p>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="section-title">KYC Verification</div>
+                <div class="card check-files-valid-area">
+                    <div class="card-header">
+                        <div class="verified-qty">3/4 Uploaded</div>
+                    </div>
+                    <div class="card-body check-files-valid-grid kyc-grid d-grid">
+                        <div class="card">
+                            <div class="border">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="icon"><i class="fa-solid fa-paperclip"></i></div>
+                                        <p>ID Front</p>
+                                    </div>
+                                    <div class="card-icons">
+                                        <a class="icon download-btn"><i class="fa-solid fa-download"></i></a>
+                                        <div class="document-verification-status d-flex justify-content-center align-items-center g-5"
+                                            verified>
+                                            <!-- use $('.verification-status').attr "verified" for verify -->
+                                            <span class="icon d-flex justify-content-center align-items-center"><i
+                                                    class="fa-solid fa-check"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <img src="../assets/img/id-card-demo.png" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="btn btn-decline">Decline</a>
+                                <a href="" class="btn btn-approve">approve</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="border">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="icon"><i class="fa-solid fa-paperclip"></i></div>
+                                        <p>Proof Of Address</p>
+                                    </div>
+                                    <div class="card-icons">
+                                        <a class="icon download-btn"><i class="fa-solid fa-download"></i></a>
+                                        <div class="document-verification-status d-flex justify-content-center align-items-center g-5"
+                                            verified>
+                                            <!-- use $('.verification-status').attr "verified" for verify -->
+                                            <span class="icon d-flex justify-content-center align-items-center"><i
+                                                    class="fa-solid fa-check"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <img src="../assets/img/address-demo.png" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="btn btn-decline">Decline</a>
+                                <a href="" class="btn btn-approve">approve</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="border">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="icon"><i class="fa-solid fa-paperclip"></i></div>
+                                        <p>ID Back</p>
+                                    </div>
+                                    <div class="card-icons">
+                                        <a class="icon download-btn"><i class="fa-solid fa-download"></i></a>
+                                        <div class="document-verification-status d-flex justify-content-center align-items-center g-5"
+                                            verified>
+                                            <!-- use $('.verification-status').attr "verified" for verify -->
+                                            <span class="icon d-flex justify-content-center align-items-center"><i
+                                                    class="fa-solid fa-check"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <img src="../assets/img/id-card-demo.png" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="btn btn-decline">Decline</a>
+                                <a href="" class="btn btn-approve">approve</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="border">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="icon"><i class="fa-solid fa-paperclip"></i></div>
+                                        <p>Selfie</p>
+                                    </div>
+                                    <div class="card-icons">
+                                        <a class="icon download-btn"><i class="fa-solid fa-download"></i></a>
+                                        <div
+                                            class="document-verification-status d-flex justify-content-center align-items-center g-5">
+                                            <!-- use $('.verification-status').attr "verified" for verify -->
+                                            <span class="icon d-flex justify-content-center align-items-center"><i
+                                                    class="fa-solid fa-check"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <img src="../assets/img/selfie-demo.png" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="btn btn-decline">Decline</a>
+                                <a href="" class="btn btn-approve">approve</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title">Prompts & Permissions</div>
+                <div class="card common-card promt-and-permission-card">
+                    <div class="card-body">
+                        <div class="input-group">
+                            <label class="form-label">Verified</label>
+                            <select class="form-control" id="userPermissionVerified" searchable="false">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Upgrade Prompt</label>
+                            <select class="form-control" id="userPermissionUpgradePrompt" searchable="false">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Certificate Prompt</label>
+                            <select class="form-control" id="userPermissionCertificatePrompt" searchable="false">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Identity Prompt</label>
+                            <select class="form-control" id="userPermissionIdentityPrompt" searchable="false">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">CustomPrompy</label>
+                            <select class="form-control" id="userPermissionCustomPrompy" searchable="false">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Demo</label>
+                            <select class="form-control" id="userPermissionDemo" searchable="false">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title">Payment Information</div>
+                <div class="card common-card">
+                    <div class="card-body">
+                        <div class="input-group">
+                            <label class="form-label">Bitcoin Address</label>
+                            <input class="form-control" type="text" placeholder="Enter Bitcoin Address">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Bitcoin Tag</label>
+                            <input class="form-control" type="text" placeholder="Enter Bitcoin tag">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">XMR Address</label>
+                            <input class="form-control" type="text" placeholder="Enter XMR Address">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">XMR tag</label>
+                            <input class="form-control" type="text" placeholder="Enter XMR tag">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">USDT Address</label>
+                            <input class="form-control" type="text" placeholder="Enter USDT Address">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">USDT Tag</label>
+                            <input class="form-control" type="text" placeholder="Enter USDT Tag">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Paypal address</label>
+                            <input class="form-control" type="text" placeholder="Enter Paypal address">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Paypal Tag</label>
+                            <input class="form-control" type="text" placeholder="Enter Paypal Tag">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Bank</label>
+                            <input class="form-control" type="text" placeholder="Enter Bank">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Account Type</label>
+                            <input class="form-control" type="text" placeholder="Account Type">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Account Number</label>
+                            <input class="form-control" type="text" placeholder="Enter Account number">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Sort Code</label>
+                            <input class="form-control" type="text" placeholder="Enter Sort Code">
                         </div>
                     </div>
                 </div>
@@ -194,6 +592,24 @@
 
 
     <!-- admin script added here ======================= -->
+    <link rel="stylesheet" href="https://unpkg.com/@yaireo/tagify/dist/tagify.css">
+    <script src="https://unpkg.com/@yaireo/tagify"></script>
+    <script>
+        // Get the input field
+        var input = document.querySelector('#tradeResultMarginSet');
+
+        // Initialize Tagify
+        var tagify = new Tagify(input, {
+            delimiters: " ",  // Space will be the delimiter to add a tag
+        });
+
+        // Optional: Listen for added tags
+        tagify.on('add', function (e) {
+            console.log("Tag added:", e.detail);
+        });
+
+    </script>
+
     <script src="../assets/js/admin-head-foot.js"></script>
 </body>
 

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="getHead">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title parent="user-manage">Admin | Manage User</title>
+    <link rel="icon" href="../assets/img/site-logo.png">
+    <meta name="description" content="Open up a world of possibilities with krust investments">
+    <meta name="keywords" content="Investments, trade">
+
+
+    <!-- jQuery added here ================ -->
+    <script src="../assets/jQuery/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <main class="main-area">
+        <div class="container user-login-history-container">
+            <div class="partial-view-header">
+                <div class="back-btn-area">
+                    <a href="./user-manage.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </span>
+                        <span>Manage Users</span>
+                    </a>
+                    <span>/</span>
+                    <a href="./user-details.html">Michael Michaelson</a>
+                    <span>/</span>
+                    <span>Log in History</span>
+                </div>
+                <div class="btn-area">
+                    <a href="../user-dashboard.html" class="btn btn-login-as-user">Log in As User</a>
+                    <!-- <a href="" class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></a> -->
+                    <div class="dropdown w-max">
+                        <a class="btn btn-dropdown">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </a>
+
+                        <ul class="list-style-none dropdown-menu d-flex flex-column">
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Edit Plan</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Edit Trade limit</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Edit Trade Result</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default text-danger" style="text-decoration: line-through;">View
+                                    Password</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Verified</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Upgrade Prompt</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Certificate Prompt</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Identity Prompt</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Custom Prompt</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Turn On/Off Demo</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="btn btn-default" href="">Delete User</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <section class="login-history-table-area">
+                <div class="section-title">Log In History</div>
+
+                <table id="login-history-table" class="login-history-table display">
+                    <thead>
+                        <tr>
+                            <th>Ip Address</th>
+                            <th></th>
+                            <th>Phone Number</th>
+                            <th>UserName</th>
+                            <th>Country</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>182.17.24.102</td>
+                            <td>2:15 PM</td>
+                            <td>08 - 08- 2024</td>
+                            <td>Canada</td>
+                            <td>Android</td>
+                            <td>
+                                <div class="dropdown w-max">
+                                    <a class="btn-dropdown">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </a>
+
+                                    <ul class="list-style-none dropdown-menu d-flex flex-column">
+                                        <li class="dropdown-item">
+                                            <a class="btn" href="">Edit History</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>182.18.24.102</td>
+                            <td>2:15 PM</td>
+                            <td>08 - 08- 2024</td>
+                            <td>Victoria, Australia</td>
+                            <td>IOS</td>
+                            <td>
+                                <div class="dropdown w-max">
+                                    <a class="btn-dropdown">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </a>
+
+                                    <ul class="list-style-none dropdown-menu d-flex flex-column">
+                                        <li class="dropdown-item">
+                                            <a class="btn" href="">Edit History</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+
+
+
+    <!-- admin script added here ======================= -->
+    <script src="../assets/js/admin-head-foot.js"></script>
+</body>
+
+</html>

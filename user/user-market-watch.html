@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Krust Investment | Market Watch</title>
+    <link rel="icon" href="../assets/img/site-logo.png">
+    <meta name="description" content="Open up a world of possibilities with krust investments">
+    <meta name="keywords" content="Investments, trade">
+
+    <!-- nice select 2 -->
+    <link rel="stylesheet" href="../assets/nice-select-2/nice-select2.css">
+
+    <!-- style added here ================ -->
+    <link rel="stylesheet" href="../assets/css/user-style.css">
+
+    <!-- font-awesome added here ================ -->
+    <link rel="stylesheet" href="../assets/font-awesome-6.6.6-web/css/all.min.css">
+
+    <!-- jQuery added here ================ -->
+    <script src="../assets/jQuery/jquery-3.7.1.min.js"></script>
+</head>
+
+<body class="">
+    <header>
+        <div class="main-header">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center g-10">
+                <div>
+                    <a href="../index.html" class="logo-area d-flex align-items-center g-4">
+                        <img src="../assets/img/site-logo-krust.png" alt="Site Logo" class="site-logo">
+
+                    </a>
+                    <div class="account-status-header d-flex align-items-center g-10">
+                        <span class="dot"></span>
+                        <span class="account-status text-primary">Active Account</span>
+                    </div>
+                </div>
+
+                <a id="btn-nav-toggle" class="btn-nav-toggle">
+                    <img src="../assets/img/icon-menu-category.png">
+                </a>
+                <dl class="header-btns d-flex flex-wrap g-8">
+                    <dt>
+                        <a class="btn btn-deposit g-8" href="./user-deposit.html">
+                            <i class="fa-regular fa-credit-card"></i>
+                            <span>Deposit</span>
+                        </a>
+                    </dt>
+                    <dt class="dropdown">
+                        <a class="btn btn-account-balance">
+                            <span class="text">Account Balance</span>
+                            <span class="account-amount">$100,000.00</span>
+                            <span class="icon"><i class="fa-solid fa-angle-down"></i></span>
+                        </a>
+
+                        <dl class="dropdown-menu d-flex flex-column">
+                            <dt class="dropdown-item">Current Plan: <span class="user-plan-name">Tier 1</span> </dt>
+                            <dt class="dropdown-item">
+                                <div class="account-status-header d-flex align-items-center g-10">
+                                    <span class="dot"></span>
+                                    <span class="account-status text-primary">Active Account</span>
+                                </div>
+                                <div class="account-amount-header">
+                                    $100,000.00
+                                </div>
+                            </dt>
+                            <dt class="dropdown-item">
+                                <a href="../login.html">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;
+                                    <span>Logout</span>
+                                </a>
+                            </dt>
+                        </dl>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <nav id="left-nav" class="left-nav">
+            <ul class="nav nav-tabs scroll">
+                <li class="nav-item">
+                    <a href="./user-account.html">
+                        <!-- <i class="fa-regular fa-circle-user"></i> -->
+                        <img width="50" height="50" src="../assets/img/user.png"
+                            style="object-fit: cover; border-radius: 50%; border: 3px solid white;">
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-deposit.html">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <span>Deposits</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" href="#trading-history">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>Trading History</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="./user-market-watch.html">
+                        <i class="fa-solid fa-list-ul"></i>
+                        <span>Market Watch</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-trade.html">
+                        <i class="fa-solid fa-arrow-down-up-across-line"></i>
+                        <span>Trade</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-education.html">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Education</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-market-news.html">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <span>Market News</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../login.html">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <article class="tab-content trade-article">
+            <section id="trade-and-market-common-grid" class="trade-and-market-common-grid d-grid">
+                <div class="card trade-and-market-common-card">
+                    <div class="card-header">
+                        <a href="./user-market-watch.html" class="btn-tab active">Market Watch</a>
+                        <a href="./user-trade.html" class="btn-tab">Tradable Assets</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="trade-and-market-common-table-area">
+                            <div class="input-group search-input-group">
+                                <input id="searchTableAssets" class="form-control search-input" type="search"
+                                    placeholder="Search for assets etc...">
+                                <label for="searchTableAssets" class="search-icon"><i
+                                        class="fa-solid fa-magnifying-glass"></i></label>
+                            </div>
+                        </div>
+                        <div class="market-watch-table-indicators scroll">
+                            <a href="#user-market-watch-table-forex" class="btn active">
+                                <span>Forex</span>
+                                <span class="icon"><i class="fa-solid fa-arrow-right-long"></i></span>
+                            </a>
+                            <a href="#user-market-watch-table-crypto" class="btn">
+                                <span>Crypto</span>
+                                <span class="icon"><i class="fa-solid fa-arrow-right-long"></i></span>
+                            </a>
+                            <a href="#user-market-watch-table-indicies" class="btn">
+                                <span>Indices</span>
+                                <span class="icon"><i class="fa-solid fa-arrow-right-long"></i></span>
+                            </a>
+                            <a href="#user-market-watch-table-futures" class="btn">
+                                <span>Futures</span>
+                                <span class="icon"><i class="fa-solid fa-arrow-right-long"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="user-market-watch-area" class="user-market-watch-area w-100">
+                    <div class="user-market-watch-table-area table-area scroll w-100">
+                        <table class="user-market-watch-table w-100">
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Market Cap</th>
+                                    <th>FD Market Cap</th>
+                                    <th>Price</th>
+                                    <th>Traded Volume</th>
+                                    <th>Available Volume</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody id="user-market-watch-table-forex">
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>13.564B</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-success">+23%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>13.564B</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-danger">-5.35%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>13.564B</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-danger">-5.35%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>13.564B</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-danger">-5.35%</td>
+                                </tr>
+                            </tbody>
+                            <tbody id="user-market-watch-table-crypto" class="d-none">
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>14</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-success">+23%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>13.564B</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-danger">-5.35%</td>
+                                </tr>
+                            </tbody>
+                            <tbody id="user-market-watch-table-indicies" class="d-none">
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>15</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-success">+23%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>13.564B</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-danger">-5.35%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>13.564B</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-danger">-5.35%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>13.564B</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-danger">-5.35%</td>
+                                </tr>
+                            </tbody>
+                            <tbody id="user-market-watch-table-futures" class="d-none">
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>16</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-success">+23%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>13.564B</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-danger">-5.35%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center g-8">
+                                            <img src="../assets/img/country-eur.png" class="icon">
+                                            <span class="name">EURUSD </span>
+                                        </div>
+                                    </td>
+                                    <td>13.564B</td>
+                                    <td>13.564B</td>
+                                    <td>3.9172523</td>
+                                    <td>12.8261B</td>
+                                    <td>257.192M</td>
+                                    <td class="text-danger">-5.35%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+
+
+
+    <!-- font-awesome added here ================ -->
+    <script src="../assets/font-awesome-6.6.6-web/js/all.min.js"></script>
+    <!-- nice select 2 -->
+    <script src="../assets/nice-select-2/nice-select2.js"></script>
+
+    <!-- apex charts js added here ======================= -->
+    <script type="text/javascript" src="../assets/apexcharts/apexcharts.js"></script>
+
+    <!-- script added here ======================= -->
+    <script src="../assets/js/user-script.js"></script>
+
+    <!-- font added here (ital + Merriweather) ================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <script>
+        $(document).on('click', '.trade-and-market-common-table > dt', function () {
+            console.log('Change location')
+            window.location.href = '/user/user-trade.html';
+        });
+
+    </script>
+</body>
+
+</html>

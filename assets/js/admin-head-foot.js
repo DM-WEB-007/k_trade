@@ -27,6 +27,9 @@ $(document).ready(function () {
 <!-- Data table added here ================ -->
 <script src="../assets/data-table-2.1.4/dataTables.js"></script>
 
+<!-- upload file js add ======================= -->
+<script src="../assets/upload-file/upload-file.js"></script>
+
 <script src="../assets/js/admin-script.js"></script>
 <script src="../assets/js/admin-layout.js"></script>
 
@@ -41,8 +44,8 @@ $(document).ready(function () {
     const headerAndNav = `
 <nav id="left-nav" class="left-nav">
     <a href="../index.html" class="logo-area">
-        <img src="../assets/img/site-logo.png" alt="Site Logo" class="site-logo">
-        <span class="site-name">Krust-Investments</span>
+        <img src="../assets/img/site-logo-krust.png" alt="Site Logo" class="site-logo">
+        
     </a>
     <ul class="nav-menu list-style-none scroll">
         <li>
@@ -54,7 +57,7 @@ $(document).ready(function () {
             </a>
         </li>
         <li>
-            <a href="./manage-user.html">
+            <a href="./user-manage.html">
                 <span class="icon">
                     <i class="fa-regular fa-circle-user"></i>
                 </span>
@@ -62,7 +65,7 @@ $(document).ready(function () {
             </a>
         </li>
         <li>
-            <a href="deposit.html">
+            <a href="./all-users-deposit.html">
                 <span class="icon">
                     <i class="fa-regular fa-credit-card"></i>
                 </span>
@@ -70,7 +73,7 @@ $(document).ready(function () {
             </a>
         </li>
         <li>
-            <a href="./withdraw.html">
+            <a href="./all-users-withdraw.html">
                 <span class="icon">
                     <i class="fa-solid fa-landmark"></i>
                 </span>
@@ -78,7 +81,7 @@ $(document).ready(function () {
             </a>
         </li>
         <li>
-            <a href="./trades.html">
+            <a href="./all-trades.html">
                 <span class="icon">
                     <i class="fa-solid fa-chart-line"></i>
                 </span>
@@ -86,7 +89,7 @@ $(document).ready(function () {
             </a>
         </li>
         <li>
-            <a href="./assets.html">
+            <a href="./all-assets.html">
                 <span class="icon">
                     <i class="fa-solid fa-money-bill-wave"></i>
                 </span>
@@ -125,20 +128,83 @@ $(document).ready(function () {
         <a id="btn-nav-toggle" class="btn-nav-toggle">
             <i class="fa-solid fa-bars"></i>
         </a>
-        <div class="dropdown w-max">
-            <a class="btn btn-admin-dropdown">
-                <span class="icon">
-                    <img src="../assets/img/site-logo.png">
-                </span>
-                <span>Admin</span>
-                <i class="fa-solid fa-angle-down"></i>
-            </a>
 
-            <ul class="dropdown-menu d-flex flex-column">
-                <li class="dropdown-item">1</li>
-                <li class="dropdown-item">2</li>
-            </ul>
-        </div>
+        <ul class="list-style-none d-flex align-items-center">
+            <li class="dropdown">
+                <a class="btn btn-notification">
+                    <i class="fa-regular fa-bell"></i>
+                </a>
+                <ul class="dropdown-menu notifications d-flex flex-column">
+                    <li class="dropdown-item head">
+                        <strong>Notifications</strong>
+                        <a><i class="fa-solid fa-check-double"></i> Mark All As Read </a>
+                    </li>
+                    <li class="dropdown-item notification-item">
+                        <a>
+                            <span class="text">New User Registration</span>
+                            <span class="date">08-08-2024</span>
+                            <span class="time">2:15 PM</span>
+                        </a>
+                    </li>
+                    <li class="dropdown-item notification-item">
+                        <a>
+                            <span class="text">New User Registration</span>
+                            <span class="date">08-08-2024</span>
+                            <span class="time">2:15 PM</span>
+                        </a>
+                    </li>
+                    <li class="dropdown-item notification-item">
+                        <a>
+                            <span class="text">Deposit Request by @MickyMichaelson</span>
+                            <span class="date">08-08-2024</span>
+                            <span class="time">2:15 PM</span>
+                        </a>
+                    </li>
+                    <li class="dropdown-item foot">
+                        <a href="./notification.html"><strong>All Notifications</strong></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown w-max">
+                <a class="btn btn-admin-dropdown">
+                    <span class="icon">
+                        <img src="../assets/img/site-logo.png">
+                    </span>
+                    <span>Admin</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </a>
+
+                <ul class="dropdown-menu d-flex flex-column">
+                    <li class="dropdown-item">
+                        <a href="./profile.html">
+                            <span class="icon"><i class="fa-regular fa-circle-user"></i></span>
+                            <span class="text">Profile</span>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="./notification.html">
+                            <span class="icon"><i class="fa-regular fa-bell"></i></span>
+                            <span class="text">Notifications</span>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="../index.html" target="_blank">
+                            <span class="icon"><i class="fa-solid fa-globe"></i></span>
+                            <span class="text">Go To Site</span>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="../login.html">
+                            <span class="icon">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            </span>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
     </div>
 </header>
     `;
@@ -160,13 +226,19 @@ $(document).ready(function () {
 
     $.each($('nav > .nav-menu > li'), function () {
         const href = $(this).find('a').attr('href');
+        const parent = $('title').attr('parent');
         if (
-            './' + lastSegment == href &&
+            ('./' + lastSegment == href || `./${parent}.html` == href) &&
             !$(this).find('a').hasClass('active')
         ) {
             $(this).find('a').addClass('active');
             $(this).siblings().find('a').removeClass('active');
             console.log('left nav active');
+            return;
         }
     }); //! ======================================================
+
+    const siteTitle = $('title').text().slice(8); //!=============
+    console.log(siteTitle);
+    if (siteTitle) $('.top-header .page-title').text(siteTitle);
 });

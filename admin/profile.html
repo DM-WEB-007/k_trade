@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="getHead">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title parent="admin-settings">Admin | Profile</title>
+    <link rel="icon" href="../assets/img/site-logo.png">
+    <meta name="description" content="Open up a world of possibilities with krust investments">
+    <meta name="keywords" content="Investments, trade">
+
+
+    <!-- jQuery added here ================ -->
+    <script src="../assets/jQuery/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <main class="main-area">
+        <div class="admin-profile-area">
+            <section class="admin-profile-section">
+                <div class="section-title">Personal information</div>
+                <div class="card common-card">
+                    <div class="card-body">
+                        <div class="upload-files-container w-100 overflowY-hidden">
+                            <div class="drag-file-area align-content-center">
+                                <img id="user-image" class="user-image d-none"
+                                    src="https://picsum.photos/300/200?grayscale" alt="">
+                                <label for="upload-dp-input"
+                                    class="upload-icon attach-icon mx-auto d-flex justify-content-center align-items-center">
+                                    <i class="fa-solid fa-link"></i>
+                                    <!-- <img src="./assets/img/Icon-attach.png"> -->
+                                </label>
+                                <p class="attach-note dynamic-message">
+                                    Supported Files: .png, .jpg, .jpeg.
+                                    <br> Image will be resized into 400x400px
+                                </p>
+                                <label class="label d-none">
+                                    <span class="browse-files">
+                                        <input id="upload-dp-input" type="file" accept="image/*"
+                                            class="default-file-input" />
+                                    </span>
+                                </label>
+                            </div>
+                            <p class="cannot-upload-message">
+                                <strong>Error : </strong> <span> Please select a file
+                                    first</span>
+                                <span class="cancel-alert-button btn-close">❌</span>
+                            </p>
+
+                            <div class="file-block">
+                                <div class="file-info">
+                                    <span class="file-name"
+                                        style="max-width: 230px; padding-right: 5px; overflow: hidden;"> </span>
+                                    | <span class="file-size"> </span>
+                                </div>
+                                <span class="material-icons remove-file-icon">
+                                    <i class="fa-regular fa-trash-can"></i>
+                                </span>
+                                <div class="progress-bar"> </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Full Name</label>
+                            <input class="form-control" type="text" placeholder="Enter Full Name">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Email Address</label>
+                            <input class="form-control" type="email" placeholder="Enter Email Address">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Username</label>
+                            <input class="form-control" type="text" placeholder="Enter Username">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-update-profile">update profile</a>
+                    </div>
+                </div>
+            </section>
+            <section class="admin-password-section">
+                <div class="section-title">Password Settings</div>
+                <div class="card common-card">
+                    <div class="card-body">
+                        <div class="input-group">
+                            <label class="form-label">Password</label>
+                            <input class="form-control" type="text" placeholder="Enter Password here">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">New Password</label>
+                            <input class="form-control" type="text" placeholder="Enter New Password here">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Confirm New Password</label>
+                            <input class="form-control" type="text" placeholder="Enter Confirm New Password here">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-change-password">Change Password</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+
+
+    <!-- admin script added here ======================= -->
+    <script src="../assets/js/admin-head-foot.js"></script>
+</body>
+
+</html>

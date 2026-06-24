@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Krust Investment | User Deposit</title>
+    <link rel="icon" href="../assets/img/site-logo.png">
+    <meta name="description" content="Open up a world of possibilities with krust investments">
+    <meta name="keywords" content="Investments, trade">
+
+    <!-- nice select 2 -->
+    <link rel="stylesheet" href="../assets/nice-select-2/nice-select2.css">
+
+    <!-- style added here ================ -->
+    <link rel="stylesheet" href="../assets/css/user-style.css">
+
+    <!-- font-awesome added here ================ -->
+    <link rel="stylesheet" href="../assets/font-awesome-6.6.6-web/css/all.min.css">
+
+    <!-- Data table added here ================ -->
+    <link rel="stylesheet" href="../assets/data-table-2.1.4/dataTables.dataTables.css" />
+
+    <!-- jQuery added here ================ -->
+    <script src="../assets/jQuery/jquery-3.7.1.min.js"></script>
+</head>
+
+<body class="">
+    <header>
+        <div class="main-header">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center g-10">
+                <div>
+                    <a href="../index.html" class="logo-area d-flex align-items-center g-4">
+                        <img src="../assets/img/site-logo-krust.png" alt="Site Logo" class="site-logo">
+
+                    </a>
+                    <div class="account-status-header d-flex align-items-center g-10">
+                        <span class="dot"></span>
+                        <span class="account-status text-primary">Active Account</span>
+                    </div>
+                </div>
+
+                <a id="btn-nav-toggle" class="btn-nav-toggle">
+                    <img src="../assets/img/icon-menu-category.png">
+                </a>
+                <dl class="header-btns d-flex flex-wrap g-8">
+                    <dt>
+                        <a class="btn btn-deposit g-8" href="./user-deposit.html">
+                            <i class="fa-regular fa-credit-card"></i>
+                            <span>Deposit</span>
+                        </a>
+                    </dt>
+                    <dt class="dropdown">
+                        <a class="btn btn-account-balance">
+                            <span class="text">Account Balance</span>
+                            <span class="account-amount">$100,000.00</span>
+                            <span class="icon"><i class="fa-solid fa-angle-down"></i></span>
+                        </a>
+
+                        <dl class="dropdown-menu d-flex flex-column">
+                            <dt class="dropdown-item">Current Plan: <span class="user-plan-name">Tier 1</span> </dt>
+                            <dt class="dropdown-item">
+                                <div class="account-status-header d-flex align-items-center g-10">
+                                    <span class="dot"></span>
+                                    <span class="account-status text-primary">Active Account</span>
+                                </div>
+                                <div class="account-amount-header">
+                                    $100,000.00
+                                </div>
+                            </dt>
+                            <dt class="dropdown-item">
+                                <a href="../login.html">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;
+                                    <span>Logout</span>
+                                </a>
+                            </dt>
+                        </dl>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <nav id="left-nav" class="left-nav">
+            <ul class="nav nav-tabs scroll">
+                <li class="nav-item">
+                    <a href="./user-account.html">
+                        <!-- <i class="fa-regular fa-circle-user"></i> -->
+                        <img width="50" height="50" src="../assets/img/user.png"
+                            style="object-fit: cover; border-radius: 50%; border: 3px solid white;">
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-deposit.html">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <span>Deposits</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" href="#trading-history">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>Trading History</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-market-watch.html">
+                        <i class="fa-solid fa-list-ul"></i>
+                        <span>Market Watch</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-trade.html">
+                        <i class="fa-solid fa-arrow-down-up-across-line"></i>
+                        <span>Trade</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="./user-education.html">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Education</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user-market-news.html">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <span>Market News</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../login.html">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <article class="tab-content trade-article">
+            <section id="market-news-section" class="market-news-section d-grid">
+                <div class="card news-search-card">
+                    <div class="card-header">
+                        <div class="card-indicators scroll">
+                            <a href="" class="btn-pill active">Forex</a>
+                            <a href="" class="btn-pill">Crypto</a>
+                            <a href="" class="btn-pill">Indices</a>
+                            <a href="" class="btn-pill">Test</a>
+                        </div>
+                        <div class="input-group search-input-group">
+                            <input id="marketNewsSearch" class="form-control search-input" type="search"
+                                placeholder="Search for assets etc..." searchFromObj="['#news-title-area .news-title']">
+                            <label for="marketNewsSearch" class="search-icon"><i
+                                    class="fa-solid fa-magnifying-glass"></i></label>
+                        </div>
+                    </div>
+                    <div id="news-title-area" class="card-body scroll">
+                        <ul class="list-style-none">
+                            <li><a href="">
+                                    <span class="news-title">China Consumer Inflation Rises, Factory-Gate
+                                        Prices...</span>
+                                    <span class="news-time">1d ago</span>
+                                </a></li>
+                            <li><a href="">
+                                    <span class="news-title">DIS: Disney Stock Sheds 4.5% Despite...</span>
+                                    <span class="news-time">15d ago</span>
+                                </a></li>
+                            <li><a class="active" href="">
+                                    <span class="news-title">BTC/USD: Bitcoin Rockets 15% as Good Jobs Data...</span>
+                                    <span class="news-time">15d ago</span>
+                                </a></li>
+                            <li><a href="">
+                                    <span class="news-title">SPX: S&P 500 Logs 2.3% for Best Day Since 2022...</span>
+                                    <span class="news-time">15d ago</span>
+                                </a></li>
+                            <li><a href="">
+                                    <span class="news-title">UAA: Under Armour Stock Sprints 19% on...</span>
+                                    <span class="news-time">19d ago</span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="news-page scroll">
+                    <div id="trading-news-container" class="trading-news-container">
+                        <div class="news-title-img">
+                            <img src="../assets/img/market-news-bitcoins.png">
+                        </div>
+                        <div class="news-label-area">
+                            <span class="label">Crypto</span>
+                            <span class="label">Bitcoin</span>
+                            <span class="label">Indices</span>
+                        </div>
+                        <h1 class="news-title">BTC/USD: Bitcoin Rockets 15% as Good Jobs Data Ignites Post-Selloff
+                            Bargain Hunt</h1>
+                        <p class="news-post-time">Aug 9, 2024 | 08:57 GMT+1</p>
+                        <div class="news-body">
+                            <p class="article">
+                                Crypto enthusiasts snapped up tokens on discount left and right after jobless claims
+                                offered glimmer of hope that the
+                                economy may not be that bad.
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>Bitcoin prices <a href="">BTCUSD</a> shot sharply higher Thursday and remained
+                                        well-bid Friday morning after a single report sparked a
+                                        broad rally in crypto. Following the <a href="">digital asset carnage</a> from
+                                        earlier this week, risk takers rushed to snap up
+                                        discounted tokens, sending Bitcoin higher by as much as 15%. The OG token
+                                        rallied from a Thursday low of $55,000 a piece
+                                        to nearly $63,000. What&#x2019s more, Bitcoin jumped 26% from its weekly low to
+                                        its
+                                        weekly high.</p>
+                                </li>
+                                <li>
+                                    <p>Jobless claims, a proxy for layoffs, showed that 233,000 people filed for
+                                        unemployment benefits in the week ended August
+                                        3. The figure slipped below expectations for 240,000 and offered a glimmer of
+                                        hope that the economy might not be
+                                        crumbling (as suggested by the <a href="">July jobs report</a> .) To this end,
+                                        risk assets were back on the menu. Cryptocurrencies
+                                        enjoyed lots of buying appetite as pent-up demand got unleashed.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>Ethereum, the second-largest digital coin, also added 15% on Thursday with prices
+                                        floating near $2,800 a piece, from
+                                        $2,350. Following the <a href="">painful Monday rout</a>, a strong recovery has
+                                        buoyed Ether to flaunt gains of about 30% on the week.
+                                        The token is seeing increased investor interest now that a total of <a
+                                            href="">nine spot
+                                            Ether exchange-traded funds</a> (ETFs) are
+                                        trading side by side with traditional assets.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+
+
+
+    <!-- font-awesome added here ================ -->
+    <script src="../assets/font-awesome-6.6.6-web/js/all.min.js"></script>
+    <!-- nice select 2 -->
+    <script src="../assets/nice-select-2/nice-select2.js"></script>
+
+    <!-- trading view js added here ======================= -->
+    <!-- <script type="text/javascript" src="../assets/trading-view-js/trading-view.js"></script> -->
+
+    <!-- apex charts js added here ======================= -->
+    <script type="text/javascript" src="../assets/apexcharts/apexcharts.js"></script>
+
+    <!-- upload file js add ======================= -->
+    <script src="../assets/upload-file/upload-file.js"></script>
+
+    <!-- Data table added here ================ -->
+    <script src="../assets/data-table-2.1.4/dataTables.js"></script>
+
+
+    <!-- script added here ======================= -->
+    <script src="../assets/js/user-script.js"></script>
+
+    <!-- font added here (ital + Merriweather) ================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $.each($('.donate-chart'), function (indexInArray, valueOfElement) {
+    $.each($('.donate-chart'), function () {
         const options = {
             series: JSON.parse($(this).attr('series')) || [50, 25, 25],
             labels: JSON.parse($(this).attr('labels').replace(/'/g, '"')) || [
@@ -56,19 +56,274 @@ $(document).ready(function () {
         chart.render();
     });
 
-    let table = new DataTable('#all-user-table', {
+    //* attach file form control script start =========
+    $(document).on(
+        'change',
+        '.attach-file-input-group .attach-icon input',
+        function () {
+            try {
+                const placeholder = $(this).prev('[type="placeholder"]');
+                const fileName = this.files[0].name;
+                if (fileName) {
+                    placeholder.text(fileName).attr('hasFile', 'true');
+                }
+            } catch (error) {
+                console.warn(error);
+            }
+        },
+    ); //? attach file form control script end ========
+
+    const searchInputFormControl = (searchInput) => {
+        $(searchInput).attr('placeholder', 'Search for user etc...');
+        $(searchInput)
+            .prev()
+            .html('<i class="fa-solid fa-magnifying-glass"></i>');
+        $(searchInput).prev().addClass('all-user-table-label');
+        $(searchInput).prev().css({
+            'margin-right': '-30px',
+            opacity: 0.5,
+        });
+    };
+    const tableAllUserTable = new DataTable('#all-user-table', {
         initComplete: function () {
             // Access the search input field and set a placeholder
             const searchInput = document.querySelector(
                 '[type="search"][aria-controls="all-user-table"]',
             );
-            if (searchInput) {
-                searchInput.placeholder = 'Search for user etc...';
-                searchInput.previousSibling.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i>`;
-                searchInput.previousSibling.classList.add(
-                    'all-user-table-label',
-                );
-            }
+            if (searchInput) searchInputFormControl(searchInput);
         },
     });
+
+    const tableLoginHistoryTable = new DataTable('#login-history-table', {
+        initComplete: function () {
+            // Access the search input field and set a placeholder
+            const searchInput = document.querySelector(
+                '[type="search"][aria-controls="login-history-table"]',
+            );
+            if (searchInput) searchInputFormControl(searchInput);
+        },
+    });
+
+    const tableAllDepositTable = new DataTable('#all-deposit-table', {
+        initComplete: function () {
+            // Access the search input field and set a placeholder
+            const searchInput = document.querySelector(
+                '[type="search"][aria-controls="all-deposit-table"]',
+            );
+            if (searchInput) searchInputFormControl(searchInput);
+        },
+    });
+
+    const tableAllWithdrawTable = new DataTable('#all-withdraw-table', {
+        initComplete: function () {
+            // Access the search input field and set a placeholder
+            const searchInput = document.querySelector(
+                '[type="search"][aria-controls="all-withdraw-table"]',
+            );
+            if (searchInput) searchInputFormControl(searchInput);
+        },
+    });
+
+    const tableAllTradeTable = new DataTable('#all-trade-table', {
+        initComplete: function () {
+            const searchInput = document.querySelector(
+                '[type="search"][aria-controls="all-trade-table"]',
+            );
+            if (searchInput) searchInputFormControl(searchInput);
+        },
+        columnDefs: [
+            {
+                className: 'dtr-control',
+                orderable: false,
+                targets: 0,
+            },
+            {
+                targets: -1, // Ensure the last column remains visible
+                responsivePriority: 1, // Higher priority for keeping it visible
+            },
+        ],
+        order: [1, 'asc'],
+        responsive: {
+            details: {
+                type: 'column',
+            },
+        },
+        scrollX: false, // Ensure horizontal scrolling is enabled
+        scrollCollapse: true,
+        fixedColumns: {
+            leftColumns: 0, // Number of columns to fix from the left
+            rightColumns: 1, // Fix the last column
+        },
+    });
+    // Use event delegation to bind the event handler
+    document.addEventListener('click', function (e) {
+        if (e.target && e.target.classList.contains('btn-delete-dt-tr')) {
+            const row = e.target.closest('tr'); // Find the closest table row
+            const table = $('#all-trade-table').DataTable(); // Access DataTable instance
+
+            if (row) {
+                table
+                    .row(row) // Select the row that contains the button
+                    .remove() // Remove the row from the DataTable
+                    .draw(false); // Redraw the table without resetting pagination
+            }
+        }
+    });
+
+    const tableAllAssetsTable = new DataTable('#all-assets-table', {
+        initComplete: function () {
+            // Access the search input field and set a placeholder
+            const searchInput = document.querySelector(
+                '[type="search"][aria-controls="all-assets-table"]',
+            );
+            if (searchInput) searchInputFormControl(searchInput);
+        },
+    });
+
+    //* Nice selector-2 script start ==========
+    typeof NiceSelect !== 'undefined' &&
+        NiceSelect.bind &&
+        $.each($('select:not(.dt-input)'), function (index, selector) {
+            const id = $(selector).attr('id');
+            const searchable = $(selector).attr('searchable');
+            const options = {
+                searchable: searchable == 'true' || false,
+                placeholder: 'select',
+                searchtext: 'Search',
+                selectedtext: 'geselecteerd',
+            };
+
+            NiceSelect.bind(document.getElementById(id), options);
+        });
+
+    //* Nice selector-2 script end ==========
+
+    $(document).on('click', '.notification-card .btn-delete', function () {
+        $(this)
+            .closest('.notification-card')
+            .fadeOut(300, () => {
+                $(this).remove();
+            });
+    });
+
+    //* modal script start ===============================
+    $(document).on('click', '[data-toggle="modal"]', function () {
+        const target = $(this).attr('href');
+        $(target).fadeIn();
+        $('body').addClass('overflowY-hidden');
+
+        $(target)
+            .find('.btn-modal-close')
+            .click(function (e) {
+                $(target).fadeOut();
+                $('body').removeClass('overflowY-hidden');
+            });
+    }); //? modal script end =================================
+
+    $(document).on('click', '.btn-delete-tr', function () {
+        const tr = $(this).closest('tr');
+        if (tr.length)
+            tr.fadeOut(300, () => {
+                $(this).remove();
+            });
+    });
+
+    //* Add software script start ============================
+    let imgSrc = '';
+    $('#bot-software-img').on('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                imgSrc = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    $(document).on('click', '#btn-add-software', function () {
+        const cardBody = $(this).closest('.card').find('.card-body');
+        if (cardBody.length) {
+            const name = cardBody.find('#bot-software-name').val();
+            const description = cardBody
+                .find('#bot-software-description')
+                .val();
+            const tr = `
+<tr>
+    <td>
+        <img src="${
+            imgSrc ? imgSrc : 'https://dummyimage.com/64x64/D9D9D9/000000'
+        }" alt="">
+        <div class="name">${name}</div>
+    </td>
+    <td>${description}</td>
+    <td>${new Date().toLocaleDateString()}</td>
+    <td>
+        <div class="dropdown w-max">
+            <a class="btn-dropdown">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </a>
+
+            <ul class="list-style-none dropdown-menu d-flex flex-column">
+                <li class="dropdown-item">
+                    <a class="btn btn-delete-tr">Delete</a>
+                </li>
+            </ul>
+        </div>
+    </td>
+</tr>`;
+            if (name && description) {
+                $('.bot-software-table tbody').append(tr);
+            }
+        }
+    });
+    //* Add software script end ==============================
+
+    //* enabled disabled button for system settings start =====
+    $(document).on('click', '.admin-system-settings-section .btn', function () {
+        if ($(this).hasClass('btn-enabled')) {
+            $(this).removeClass('btn-enabled');
+            $(this).addClass('btn-disabled');
+        } else {
+            $(this).addClass('btn-enabled');
+            $(this).removeClass('btn-disabled');
+        }
+    });
+    //* enabled disabled button for system settings end =======
+
+    //* user-trade-result-percentage script start ===
+    $(document).on('keyup', '.user-trade-result-percentage', function () {
+        const value = $(this).val();
+        const selectorOptions = $(this)
+            .closest('.modal-body')
+            .find('.userTradeResult');
+
+        if (value > 10) {
+            selectorOptions.val('Win'); // Select "Win"
+        } else if (value < 10) {
+            selectorOptions.val('Loss'); // Select "Loss"
+        } else if (value == 10) {
+            selectorOptions.val('Radom'); // Select "Random"
+        } else {
+            selectorOptions.val(''); // Deselect if none match
+        }
+
+        // update Nice Select wrapper
+        selectorOptions.next('.nice-select').remove();
+        NiceSelect.bind(selectorOptions[0]);
+    });
+
+    //* user-trade-result-percentage script end ===
+
+    //* Password show/hide icon script start ==========
+    $(document).on('click', '.input-group .eye-icon', function () {
+        const inputId = $(this).attr('for');
+        if ($(this).find('.fa-eye-slash').length) {
+            $(this).html(`<i class="fa-regular fa-eye"></i>`);
+            $(`#${inputId}`).attr('type', 'text');
+        } else {
+            $(this).html(`<i class="fa-regular fa-eye-slash"></i>`);
+            $(`#${inputId}`).attr('type', 'password');
+        }
+    }); //? Password show/hide icon script end =========
 });
